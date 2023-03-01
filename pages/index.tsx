@@ -85,11 +85,24 @@ export default function Home() {
             {player1.first_name} {player1.last_name}
           </h2>
           <p>Points: {player1Stats.pts}</p>
-          <p>Rebounds: {player1Stats.reb}</p>
           <p>Assists: {player1Stats.ast}</p>
+          <p>Rebounds: {player1Stats.reb}</p>
           <p>Minutes: {player1Stats.min}</p>
+          <p>FG%: {player1Stats.fg_pct}</p>
+          <p>3P%: {player1Stats.fg3_pct}</p>
+          <p>FT%: {player1Stats.ft_pct}</p>
           <p>FG: {player1Stats.fgm}</p>
           <p>FGA: {player1Stats.fga}</p>
+          <p>3P: {player1Stats.fg3m}</p>
+          <p>3PA: {player1Stats.fg3a}</p>
+          <p>FT: {player1Stats.ftm}</p>
+          <p>FTA: {player1Stats.fta}</p>
+          <p>ORB: {player1Stats.oreb}</p>
+          <p>DRB: {player1Stats.dreb}</p>
+          <p>STL: {player1Stats.stl}</p>
+          <p>BLK: {player1Stats.blk}</p>
+          <p>TOV: {player1Stats.turnover}</p>
+          <p>PF: {player1Stats.pf}</p>
         </div>
       )}
 
@@ -99,11 +112,24 @@ export default function Home() {
             {player2.first_name} {player2.last_name}
           </h2>
           <p>Points: {player2Stats.pts}</p>
-          <p>Rebounds: {player2Stats.reb}</p>
           <p>Assists: {player2Stats.ast}</p>
+          <p>Rebounds: {player2Stats.reb}</p>
           <p>Minutes: {player2Stats.min}</p>
+          <p>FG%: {player2Stats.fg_pct}</p>
+          <p>3P%: {player2Stats.fg3_pct}</p>
+          <p>FT%: {player2Stats.ft_pct}</p>
           <p>FG: {player2Stats.fgm}</p>
           <p>FGA: {player2Stats.fga}</p>
+          <p>3P: {player2Stats.fg3m}</p>
+          <p>3PA: {player2Stats.fg3a}</p>
+          <p>FT: {player2Stats.ftm}</p>
+          <p>FTA: {player2Stats.fta}</p>
+          <p>ORB: {player2Stats.oreb}</p>
+          <p>DRB: {player2Stats.dreb}</p>
+          <p>STL: {player2Stats.stl}</p>
+          <p>BLK: {player2Stats.blk}</p>
+          <p>TOV: {player2Stats.turnover}</p>
+          <p>PF: {player2Stats.pf}</p>
         </div>
       )}
     </>
