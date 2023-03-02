@@ -88,8 +88,9 @@ export default function Home() {
           <h2>
             {player1.first_name} {player1.last_name}
           </h2>
+          {/* 
           <p>Points: {player1Stats.pts}</p>
-          {/* <p>Assists: {player1Stats.ast}</p>
+          <p>Assists: {player1Stats.ast}</p>
           <p>Rebounds: {player1Stats.reb}</p>
           <p>FG%: {player1Stats.fg_pct}</p>
           <p>3P%: {player1Stats.fg3_pct}</p>
@@ -114,8 +115,9 @@ export default function Home() {
           <h2>
             {player2.first_name} {player2.last_name}
           </h2>
+          {/* 
           <p>Points: {player2Stats.pts}</p>
-          {/* <p>Assists: {player2Stats.ast}</p>
+          <p>Assists: {player2Stats.ast}</p>
           <p>Rebounds: {player2Stats.reb}</p>
           <p>FG%: {player2Stats.fg_pct}</p>
           <p>3P%: {player2Stats.fg3_pct}</p>

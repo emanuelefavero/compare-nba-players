@@ -20,7 +20,12 @@ export default function StatsCard({
 }: Props) {
   return (
     <section className={styles.statsCard} title={statisticNameFull}>
-      <div className={styles.statisticNumber}>
+      <div
+        className={styles.statisticNumber}
+        style={{
+          color: player1Statistic > player2Statistic ? '#00b894' : '#d63054',
+        }}
+      >
         {player1Statistic} {/* 👈 */}
       </div>
 
@@ -36,7 +41,12 @@ export default function StatsCard({
         />
       </div>
 
-      <div className={styles.statisticNumber}>
+      <div
+        className={styles.statisticNumber}
+        style={{
+          color: player1Statistic < player2Statistic ? '#00b894' : '#d63054',
+        }}
+      >
         {player2Statistic} {/* 👈 */}
       </div>
     </section>
