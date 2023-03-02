@@ -1,5 +1,44 @@
-.chartContainer {
-  width: 100px;
-  height: 400px;
-  margin: 0 auto;
+section.statsCard {
+  width: 100%;
+  max-width: calc(370px - 2rem);
+  height: max-content;
+
+  padding: 0.5rem 0.5rem;
+
+  background-color: rgba(175, 197, 255, 0.05);
+  border-radius: 1rem;
+  box-shadow: inset -1px -1px 0.3rem 0 rgba(255, 255, 255, 0.05);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .statisticNumber {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .chartContainer {
+    position: relative;
+    width: 100px;
+    margin: 0.8rem 1.5rem;
+
+    .statsTitle {
+      font-size: 1.5rem;
+      font-weight: 600;
+
+      position: absolute;
+      top: calc(47% - 0.75rem);
+      left: calc(26%);
+    }
+  }
+}
+
+@media (max-width: 355px) {
+  section.statsCard {
+    padding: 1.2rem 0.5rem;
+    width: max-content;
+    flex-direction: column;
+  }
 }

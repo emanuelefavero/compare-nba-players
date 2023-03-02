@@ -134,17 +134,27 @@ export default function Home() {
         </div>
       )}
 
-      {/* Stats Chart */}
+      {/* Stats Card */}
       {player1Stats && player2Stats && (
-        <div className={styles.chartContainer}>
-          <StatsChart
-            player1Statistic={player1Stats.pts}
-            player2Statistic={player2Stats.pts}
-            statisticName='PPG'
-            player1Name={`${player1.first_name} ${player1.last_name}`}
-            player2Name={`${player2.first_name} ${player2.last_name}`}
-          />
-        </div>
+        <section className={styles.statsCard}>
+          <div className={styles.statisticNumber}>
+            {player1Stats.pts.toFixed(1)} {/* 👈 */}
+          </div>
+          {/* Stats Chart */}
+          <div className={styles.chartContainer}>
+            <div className={styles.statsTitle}>PPG</div> {/* 👈 */}
+            <StatsChart
+              player1Statistic={player1Stats.pts} // 👈
+              player2Statistic={player2Stats.pts} // 👈
+              statisticName='PPG' // 👈
+              player1Name={`${player1.first_name} ${player1.last_name}`}
+              player2Name={`${player2.first_name} ${player2.last_name}`}
+            />
+          </div>
+          <div className={styles.statisticNumber}>
+            {player2Stats.pts.toFixed(1)} {/* 👈 */}
+          </div>
+        </section>
       )}
     </>
   )
