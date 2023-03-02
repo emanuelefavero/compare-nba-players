@@ -24,28 +24,40 @@ export default function StatsChart({
       {
         label: statisticName,
         data: [player2Statistic, player1Statistic],
-        backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'],
-        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],
+        backgroundColor: [
+          'rgba(172, 205, 7, 0.888)',
+          'rgba(93, 152, 255, 0.15)',
+        ],
+        borderColor: ['rgba(172, 205, 7, 1)', 'rgba(93, 152, 255, 1)'],
         borderWidth: 1,
 
         // Hover
         hoverBorderWidth: 2,
         // hoverBorderColor: 'white',
         hoverBackgroundColor: [
-          'rgba(255, 99, 132, 0.4)',
-          'rgba(54, 162, 235, 0.4)',
+          'rgba(197, 232, 19, 1)',
+          'rgba(93, 152, 255, 1)',
         ],
       },
     ],
   }
 
   const options = {
+    tooltips: {
+      enabled: false,
+    },
+
     // rotation: -0.1 * Math.PI,
     plugins: {
       legend: {
         display: false,
         reverse: true,
       },
+
+      tooltip: {
+        enabled: false,
+      },
+
       // title: {
       //   display: true,
       //   text: 'TEST',
