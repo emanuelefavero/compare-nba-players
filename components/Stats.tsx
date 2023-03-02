@@ -174,24 +174,23 @@ export default function Stats({
   )
 }
 
-{
-  /* 
-          <p>Points: {player2Stats.pts}</p>
-          <p>Assists: {player2Stats.ast}</p>
-          <p>Rebounds: {player2Stats.reb}</p>
-          <p>FG%: {player2Stats.fg_pct}</p>
-          <p>3P%: {player2Stats.fg3_pct}</p>
-          <p>FT%: {player2Stats.ft_pct}</p>
-          <p>FG: {player2Stats.fgm}</p>
-          <p>FGA: {player2Stats.fga}</p>
-          <p>3P: {player2Stats.fg3m}</p>
-          <p>3PA: {player2Stats.fg3a}</p>
-          <p>FT: {player2Stats.ftm}</p>
-          <p>FTA: {player2Stats.fta}</p>
-          <p>ORB: {player2Stats.oreb}</p>
-          <p>DRB: {player2Stats.dreb}</p>
-          <p>STL: {player2Stats.stl}</p>
-          <p>BLK: {player2Stats.blk}</p>
-          <p>TOV: {player2Stats.turnover}</p>
-          <p>PF: {player2Stats.pf}</p> */
-}
+/** DATA
+ * player1Stats.pts
+ * player1Stats.ast
+ * player1Stats.reb
+ * player1Stats.fg_pct
+ * player1Stats.fg3_pct
+ * player1Stats.ft_pct
+ * player1Stats.fgm
+ * player1Stats.fga
+ * player1Stats.fg3m
+ * player1Stats.fg3a
+ * player1Stats.ftm
+ * player1Stats.fta
+ * player1Stats.oreb
+ * player1Stats.dreb
+ * player1Stats.stl
+ * player1Stats.blk
+ * player1Stats.turnover
+ * player1Stats.pf
+ */
