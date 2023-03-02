@@ -134,6 +134,7 @@ export default function Home() {
         </div>
       )}
 
+      {/* TODO: Move the following code to a separate component with these props player1Statistic, player2Statistic, statisticName */}
       {/* Stats Card */}
       {player1Stats && player2Stats && (
         <section className={styles.statsCard}>
@@ -142,10 +143,10 @@ export default function Home() {
           </div>
           {/* Stats Chart */}
           <div className={styles.chartContainer}>
-            <div className={styles.statsTitle}>PPG</div> {/* 👈 */}
+            <div className={styles.statisticName}>PPG</div> {/* 👈 */}
             <StatsChart
-              player1Statistic={player1Stats.pts} // 👈
-              player2Statistic={player2Stats.pts} // 👈
+              player1Statistic={player1Stats.pts.toFixed(1)} // 👈
+              player2Statistic={player2Stats.pts.toFixed(1)} // 👈
               statisticName='PPG' // 👈
               player1Name={`${player1.first_name} ${player1.last_name}`}
               player2Name={`${player2.first_name} ${player2.last_name}`}
