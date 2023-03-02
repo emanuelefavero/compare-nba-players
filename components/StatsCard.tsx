@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import styles from '@/styles/StatsCard.module.scss'
 import StatsChart from '@/components/StatsChart'
 
@@ -18,12 +19,35 @@ export default function StatsCard({
   player1Name,
   player2Name,
 }: Props) {
+  const [player1StatColor, setPlayer1StatColor] = useState('#fff')
+  const [player2StatColor, setPlayer2StatColor] = useState('#fff')
+
+  useEffect(() => {
+    if (statisticName !== '\u00A0PF' && statisticName !== 'TOV') {
+      if (player1Statistic > player2Statistic) {
+        setPlayer1StatColor('#05d555')
+        setPlayer2StatColor('#ea114f')
+      } else {
+        setPlayer1StatColor('#ea114f')
+        setPlayer2StatColor('#05d555')
+      }
+    } else {
+      if (player1Statistic < player2Statistic) {
+        setPlayer1StatColor('#05d555')
+        setPlayer2StatColor('#ea114f')
+      } else {
+        setPlayer1StatColor('#ea114f')
+        setPlayer2StatColor('#05d555')
+      }
+    }
+  }, [player1Statistic, player2Statistic, statisticName])
+
   return (
     <section className={styles.statsCard}>
       <div
         className={styles.statisticNumber}
         style={{
-          color: player1Statistic > player2Statistic ? '#05d555' : '#ea114f',
+          color: player1StatColor,
         }}
       >
         {player1Statistic} {/* 👈 */}
@@ -44,8 +68,11 @@ export default function StatsCard({
       <div
         className={styles.statisticNumber}
         style={{
-          color: player1Statistic < player2Statistic ? '#05d555' : '#ea114f',
+          color: player2StatColor,
         }}
+        // style={{
+        //   color: player1Statistic < player2Statistic ? '#05d555' : '#ea114f',
+        // }}
       >
         {player2Statistic} {/* 👈 */}
       </div>
