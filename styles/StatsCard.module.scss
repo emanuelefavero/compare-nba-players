@@ -14,6 +14,8 @@ section.statsCard {
   align-items: center;
   flex-wrap: wrap;
 
+  transition: all 0.2s ease-in-out;
+
   .statisticNumber {
     font-size: 2rem;
     font-weight: 600;
@@ -32,6 +34,11 @@ section.statsCard {
       top: calc(47% - 0.75rem);
       left: calc(26%);
     }
+  }
+
+  &:hover {
+    background-color: rgba(175, 197, 255, 0.075);
+    transform: translateY(-0.2rem);
   }
 }
 
