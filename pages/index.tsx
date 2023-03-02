@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import StatsChart from '@/components/StatsChart'
-import styles from '@/styles/Home.module.scss'
+// import StatsCard from '@/components/StatsCard'
+import Stats from '@/components/Stats'
 
 export default function Home() {
   const [playerToSearch, setPlayerToSearch] = useState('')
@@ -36,7 +36,6 @@ export default function Home() {
 
   return (
     <>
-      {/* <Doughnut data={data} /> */}
       <input
         type='text'
         placeholder='Search Player...'
@@ -62,6 +61,8 @@ export default function Home() {
         </div>
       ))}
 
+      {/* Selected Players */}
+      {/* TODO: Add other data like height_feet, height_inches, position, team.abbreviation, team.city, team.conference, team.full_name, team.name, weight_pounds */}
       {player1 && (
         <div>
           <p>
@@ -80,6 +81,8 @@ export default function Home() {
 
       <button onClick={handleCompare}>Compare</button>
 
+      {/* Stats */}
+      {/* TODO: Remove this section */}
       {player1Stats && (
         <div>
           <h2>
@@ -88,7 +91,6 @@ export default function Home() {
           <p>Points: {player1Stats.pts}</p>
           {/* <p>Assists: {player1Stats.ast}</p>
           <p>Rebounds: {player1Stats.reb}</p>
-          <p>Minutes: {player1Stats.min}</p>
           <p>FG%: {player1Stats.fg_pct}</p>
           <p>3P%: {player1Stats.fg3_pct}</p>
           <p>FT%: {player1Stats.ft_pct}</p>
@@ -115,7 +117,6 @@ export default function Home() {
           <p>Points: {player2Stats.pts}</p>
           {/* <p>Assists: {player2Stats.ast}</p>
           <p>Rebounds: {player2Stats.reb}</p>
-          <p>Minutes: {player2Stats.min}</p>
           <p>FG%: {player2Stats.fg_pct}</p>
           <p>3P%: {player2Stats.fg3_pct}</p>
           <p>FT%: {player2Stats.ft_pct}</p>
@@ -134,28 +135,14 @@ export default function Home() {
         </div>
       )}
 
-      {/* TODO: Move the following code to a separate component with these props player1Statistic, player2Statistic, statisticName */}
-      {/* Stats Card */}
+      {/* Stats */}
       {player1Stats && player2Stats && (
-        <section className={styles.statsCard}>
-          <div className={styles.statisticNumber}>
-            {player1Stats.pts.toFixed(1)} {/* 👈 */}
-          </div>
-          {/* Stats Chart */}
-          <div className={styles.chartContainer}>
-            <div className={styles.statisticName}>PPG</div> {/* 👈 */}
-            <StatsChart
-              player1Statistic={player1Stats.pts.toFixed(1)} // 👈
-              player2Statistic={player2Stats.pts.toFixed(1)} // 👈
-              statisticName='PPG' // 👈
-              player1Name={`${player1.first_name} ${player1.last_name}`}
-              player2Name={`${player2.first_name} ${player2.last_name}`}
-            />
-          </div>
-          <div className={styles.statisticNumber}>
-            {player2Stats.pts.toFixed(1)} {/* 👈 */}
-          </div>
-        </section>
+        <Stats
+          player1Stats={player1Stats}
+          player2Stats={player2Stats}
+          player1={player1}
+          player2={player2}
+        />
       )}
     </>
   )
