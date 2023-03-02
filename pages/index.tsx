@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import StatsChart from '@/components/StatsChart'
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Home.module.scss'
 
 export default function Home() {
   const [playerToSearch, setPlayerToSearch] = useState('')
