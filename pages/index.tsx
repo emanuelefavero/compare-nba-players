@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Stats from '@/components/Stats'
 
 export default function Home() {
+  // TODO: convert types from any to something more specific
   const [playerToSearch, setPlayerToSearch] = useState('')
   const [foundPlayers, setFoundPlayers] = useState<any>([])
   const [player1, setPlayer1] = useState<any>(null)

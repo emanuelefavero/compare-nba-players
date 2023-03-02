@@ -27,6 +27,9 @@ export default function StatsCard({
       if (player1Statistic > player2Statistic) {
         setPlayer1StatColor('#05d555')
         setPlayer2StatColor('#ea114f')
+      } else if (player1Statistic === player2Statistic) {
+        setPlayer1StatColor('#fff')
+        setPlayer2StatColor('#fff')
       } else {
         setPlayer1StatColor('#ea114f')
         setPlayer2StatColor('#05d555')
@@ -35,6 +38,9 @@ export default function StatsCard({
       if (player1Statistic < player2Statistic) {
         setPlayer1StatColor('#05d555')
         setPlayer2StatColor('#ea114f')
+      } else if (player1Statistic === player2Statistic) {
+        setPlayer1StatColor('#fff')
+        setPlayer2StatColor('#fff')
       } else {
         setPlayer1StatColor('#ea114f')
         setPlayer2StatColor('#05d555')
