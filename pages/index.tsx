@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import StatsChart from '@/components/StatsChart'
+import styles from '@/styles/Home.module.css'
 
 export default function Home() {
   const [playerToSearch, setPlayerToSearch] = useState('')
@@ -34,6 +36,7 @@ export default function Home() {
 
   return (
     <>
+      {/* <Doughnut data={data} /> */}
       <input
         type='text'
         placeholder='Search Player...'
@@ -64,7 +67,6 @@ export default function Home() {
           <p>
             {player1.first_name} {player1.last_name}
           </p>
-          <button onClick={() => setPlayer1(null)}>Remove Player 1</button>
         </div>
       )}
 
@@ -73,7 +75,6 @@ export default function Home() {
           <p>
             {player2.first_name} {player2.last_name}
           </p>
-          <button onClick={() => setPlayer2(null)}>Remove Player 2</button>
         </div>
       )}
 
@@ -85,7 +86,7 @@ export default function Home() {
             {player1.first_name} {player1.last_name}
           </h2>
           <p>Points: {player1Stats.pts}</p>
-          <p>Assists: {player1Stats.ast}</p>
+          {/* <p>Assists: {player1Stats.ast}</p>
           <p>Rebounds: {player1Stats.reb}</p>
           <p>Minutes: {player1Stats.min}</p>
           <p>FG%: {player1Stats.fg_pct}</p>
@@ -102,7 +103,7 @@ export default function Home() {
           <p>STL: {player1Stats.stl}</p>
           <p>BLK: {player1Stats.blk}</p>
           <p>TOV: {player1Stats.turnover}</p>
-          <p>PF: {player1Stats.pf}</p>
+          <p>PF: {player1Stats.pf}</p> */}
         </div>
       )}
 
@@ -112,7 +113,7 @@ export default function Home() {
             {player2.first_name} {player2.last_name}
           </h2>
           <p>Points: {player2Stats.pts}</p>
-          <p>Assists: {player2Stats.ast}</p>
+          {/* <p>Assists: {player2Stats.ast}</p>
           <p>Rebounds: {player2Stats.reb}</p>
           <p>Minutes: {player2Stats.min}</p>
           <p>FG%: {player2Stats.fg_pct}</p>
@@ -129,7 +130,20 @@ export default function Home() {
           <p>STL: {player2Stats.stl}</p>
           <p>BLK: {player2Stats.blk}</p>
           <p>TOV: {player2Stats.turnover}</p>
-          <p>PF: {player2Stats.pf}</p>
+          <p>PF: {player2Stats.pf}</p> */}
+        </div>
+      )}
+
+      {/* Stats Chart */}
+      {player1Stats && player2Stats && (
+        <div className={styles.chartContainer}>
+          <StatsChart
+            player1Statistic={player1Stats.pts}
+            player2Statistic={player2Stats.pts}
+            statisticName='PPG'
+            player1Name={`${player1.first_name} ${player1.last_name}`}
+            player2Name={`${player2.first_name} ${player2.last_name}`}
+          />
         </div>
       )}
     </>
