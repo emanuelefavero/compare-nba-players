@@ -54,6 +54,9 @@ export default function StatsChart({
 
     // Responsive Chart (set width and height in css - .chart-container)
     responsive: true,
+
+    // Doughnut cutout size
+    cutout: 40,
   }
 
   return <Doughnut data={data} options={options} />
