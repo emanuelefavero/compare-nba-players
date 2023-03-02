@@ -43,39 +43,42 @@ export default function StatsCard({
   }, [player1Statistic, player2Statistic, statisticName])
 
   return (
-    <section className={styles.statsCard}>
-      <div
-        className={styles.statisticNumber}
-        style={{
-          color: player1StatColor,
-        }}
-      >
-        {player1Statistic} {/* 👈 */}
-      </div>
+    <div className={styles.statsCardContainer}>
+      <div className={styles.statsCardTitle}>{statisticNameFull}</div>
+      <section className={styles.statsCard}>
+        <div
+          className={styles.statisticNumber}
+          style={{
+            color: player1StatColor,
+          }}
+        >
+          {player1Statistic} {/* 👈 */}
+        </div>
 
-      {/* Stats Chart */}
-      <div className={styles.chartContainer} title={statisticNameFull}>
-        <div className={styles.statisticName}>{statisticName}</div> {/* 👈 */}
-        <StatsChart
-          player1Statistic={player1Statistic} // 👈
-          player2Statistic={player2Statistic} // 👈
-          statisticName={statisticName} // 👈
-          player1Name={player1Name}
-          player2Name={player2Name}
-        />
-      </div>
+        {/* Stats Chart */}
+        <div className={styles.chartContainer} title={statisticNameFull}>
+          <div className={styles.statisticName}>{statisticName}</div> {/* 👈 */}
+          <StatsChart
+            player1Statistic={player1Statistic} // 👈
+            player2Statistic={player2Statistic} // 👈
+            statisticName={statisticName} // 👈
+            player1Name={player1Name}
+            player2Name={player2Name}
+          />
+        </div>
 
-      <div
-        className={styles.statisticNumber}
-        style={{
-          color: player2StatColor,
-        }}
-        // style={{
-        //   color: player1Statistic < player2Statistic ? '#05d555' : '#ea114f',
-        // }}
-      >
-        {player2Statistic} {/* 👈 */}
-      </div>
-    </section>
+        <div
+          className={styles.statisticNumber}
+          style={{
+            color: player2StatColor,
+          }}
+          // style={{
+          //   color: player1Statistic < player2Statistic ? '#05d555' : '#ea114f',
+          // }}
+        >
+          {player2Statistic} {/* 👈 */}
+        </div>
+      </section>
+    </div>
   )
 }

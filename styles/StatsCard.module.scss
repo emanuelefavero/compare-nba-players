@@ -1,48 +1,79 @@
-section.statsCard {
+.statsCardContainer {
   width: 100%;
   max-width: calc(370px - 2rem);
   height: max-content;
 
-  padding: 0.5rem 0.5rem;
-
-  background-color: rgba(175, 197, 255, 0.05);
-  border-radius: 1rem;
-  box-shadow: inset -1px -1px 0.3rem 0 rgba(255, 255, 255, 0.05);
-
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
 
-  transition: all 0.2s ease-in-out;
+  margin: 0.2rem 0rem;
 
-  .statisticNumber {
-    font-size: 2rem;
+  .statsCardTitle {
+    color: #7d83a5;
+    font-size: 1rem;
     font-weight: 600;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    padding: 0rem 0.7rem;
+    // cursor: default;
   }
 
-  .chartContainer {
-    position: relative;
-    width: 100px;
-    margin: 0.8rem 1.5rem;
+  section.statsCard {
+    width: 100%;
+    max-width: calc(370px - 2rem);
+    height: max-content;
 
-    .statisticName {
-      font-size: 1.5rem;
+    padding: 0.5rem 0.5rem;
+
+    background-color: rgba(175, 197, 255, 0.05);
+    border-radius: 1rem;
+    box-shadow: inset -1px -1px 0.3rem 0 rgba(255, 255, 255, 0.05);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    transition: all 0.2s ease-in-out;
+
+    .statisticNumber {
+      font-size: 2rem;
       font-weight: 600;
-
-      position: absolute;
-      top: calc(47% - 0.75rem);
-      left: calc(26%);
+      // cursor: default;
     }
-  }
 
-  &:hover {
-    background-color: rgba(175, 197, 255, 0.075);
-    transform: translateY(-0.2rem);
+    .chartContainer {
+      position: relative;
+      width: 100px;
+      margin: 0.8rem 1.5rem;
+
+      .statisticName {
+        font-size: 1.5rem;
+        font-weight: 600;
+
+        position: absolute;
+        top: calc(47% - 0.75rem);
+        left: calc(26%);
+
+        cursor: default;
+        user-select: none;
+      }
+    }
+
+    &:hover {
+      background-color: rgba(175, 197, 255, 0.075);
+      transform: translateY(-0.2rem);
+    }
   }
 }
 
 @media (max-width: 355px) {
+  .statsCardContainer {
+    width: max-content;
+  }
   section.statsCard {
     padding: 1.2rem 0.5rem;
     width: max-content;
