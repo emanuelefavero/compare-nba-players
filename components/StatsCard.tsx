@@ -3,6 +3,7 @@ import StatsChart from '@/components/StatsChart'
 
 interface Props {
   statisticName: string
+  statisticNameFull: string
   player1Statistic: number
   player2Statistic: number
   player1Name: string
@@ -11,13 +12,14 @@ interface Props {
 
 export default function StatsCard({
   statisticName,
+  statisticNameFull,
   player1Statistic,
   player2Statistic,
   player1Name,
   player2Name,
 }: Props) {
   return (
-    <section className={styles.statsCard}>
+    <section className={styles.statsCard} title={statisticNameFull}>
       <div className={styles.statisticNumber}>
         {player1Statistic} {/* 👈 */}
       </div>

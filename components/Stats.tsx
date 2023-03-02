@@ -18,6 +18,7 @@ export default function Stats({
     <section className={styles.stats}>
       <StatsCard
         statisticName='PPG'
+        statisticNameFull='Points Per Game'
         player1Statistic={player1Stats.pts.toFixed(1)}
         player2Statistic={player2Stats.pts.toFixed(1)}
         player1Name={`${player1.first_name} ${player1.last_name}`}
@@ -26,6 +27,7 @@ export default function Stats({
 
       <StatsCard
         statisticName='AST'
+        statisticNameFull='Assists Per Game'
         player1Statistic={player1Stats.ast.toFixed(1)}
         player2Statistic={player2Stats.ast.toFixed(1)}
         player1Name={`${player1.first_name} ${player1.last_name}`}
