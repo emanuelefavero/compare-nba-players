@@ -31,7 +31,7 @@ export default function FoundPlayer({
           <p>{player.team.name}</p>
           {player.position && (
             <>
-              <p>•</p>
+              <p className={styles.dot}>•</p>
 
               <p>{player.position}</p>
             </>

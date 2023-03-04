@@ -32,8 +32,16 @@
       flex-direction: row;
       align-items: center;
 
+      img {
+        user-select: none;
+      }
+
       p {
         color: rgba(194, 209, 255, 0.6);
+      }
+
+      .dot {
+        user-select: none;
       }
 
       // style all children except the last one
@@ -73,6 +81,7 @@
       font-size: 1.5rem;
       margin-top: 0.5rem;
       background: none;
+      user-select: none;
 
       text-shadow: 0 0 0.3rem #025f35;
 
