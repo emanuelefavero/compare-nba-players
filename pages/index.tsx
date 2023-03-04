@@ -51,7 +51,7 @@ export default function Home() {
       >
         <input
           type='text'
-          placeholder='Search IPlayer...'
+          placeholder='Search player...'
           value={playerToSearch}
           onChange={(e) => setPlayerToSearch(e.target.value)}
           onKeyDown={handleKeyDown}
