@@ -9,8 +9,27 @@ export default function Home() {
   const [foundPlayers, setFoundPlayers] = useState<IPlayer[]>([])
   const [player1, setPlayer1] = useState<IPlayer | null>(null)
   const [player2, setPlayer2] = useState<IPlayer | null>(null)
+  const [lastAddedPlayer, setLastAddedPlayer] = useState<IPlayer | null>(null)
   const [player1Stats, setPlayer1Stats] = useState<IPlayerStats | null>(null)
   const [player2Stats, setPlayer2Stats] = useState<IPlayerStats | null>(null)
+
+  const handleAddPlayerForComparison = (player: IPlayer) => {
+    if (!player1) {
+      setPlayer1(player)
+      setLastAddedPlayer(player)
+    } else if (!player2) {
+      setPlayer2(player)
+      setLastAddedPlayer(player)
+    } else {
+      if (lastAddedPlayer === player1) {
+        setPlayer2(player)
+        setLastAddedPlayer(player)
+      } else {
+        setPlayer1(player)
+        setLastAddedPlayer(player)
+      }
+    }
+  }
 
   const handleCompare = async () => {
     const response1 = await fetch(
@@ -63,14 +82,9 @@ export default function Home() {
 
             {/* ----- */}
 
-            <button
-              onClick={() => {
-                setPlayer1(player)
-              }}
-            >
-              Player 1
+            <button onClick={() => handleAddPlayerForComparison(player)}>
+              Add Player For Comparison
             </button>
-            <button onClick={() => setPlayer2(player)}>Player 2</button>
           </div>
         ))}
 
