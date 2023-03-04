@@ -11,13 +11,21 @@ Chart.defaults.color = '#9ba1b8'
 // Hide label
 Chart.defaults.plugins.legend.display = false
 
+interface Props {
+  player1Statistic: number
+  player2Statistic: number
+  statisticName: string
+  player1Name: string
+  player2Name: string
+}
+
 export default function StatsChart({
   player1Statistic,
   player2Statistic,
   statisticName,
   player1Name,
   player2Name,
-}: any) {
+}: Props) {
   const data = {
     labels: [player2Name, player1Name],
     datasets: [
