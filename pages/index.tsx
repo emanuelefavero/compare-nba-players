@@ -1,5 +1,4 @@
 import { useState } from 'react'
-// import StatsCard from '@/components/StatsCard'
 import Stats from '@/components/Stats'
 
 export default function Home() {
@@ -17,6 +16,12 @@ export default function Home() {
     )
     const data = await response.json()
     setFoundPlayers(data.data)
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handlePlayerSearch()
+    }
   }
 
   const handleCompare = async () => {
@@ -48,6 +53,7 @@ export default function Home() {
           placeholder='Search Player...'
           value={playerToSearch}
           onChange={(e) => setPlayerToSearch(e.target.value)}
+          onKeyDown={handleKeyDown}
         />
 
         <button type='submit'>Search</button>
