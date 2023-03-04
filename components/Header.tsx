@@ -1,4 +1,7 @@
 import { FormEvent, useState } from 'react'
+import Image from 'next/image'
+import Router from 'next/router'
+import styles from '@/styles/Header.module.scss'
 
 import { IPlayer } from '@/types'
 
@@ -24,7 +27,11 @@ export default function Header({ setFoundPlayers }: Props) {
   }
 
   return (
-    <>
+    <header className={styles.header}>
+      <button className={styles.logo} onClick={() => Router.reload()}>
+        <Image src='/logo.png' alt='logo' width={40} height={40} />
+      </button>
+
       <form
         onSubmit={(e: FormEvent<HTMLFormElement>) => {
           e.preventDefault()
@@ -41,6 +48,6 @@ export default function Header({ setFoundPlayers }: Props) {
 
         <button type='submit'>Search</button>
       </form>
-    </>
+    </header>
   )
 }
