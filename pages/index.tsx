@@ -37,14 +37,21 @@ export default function Home() {
 
   return (
     <>
-      <input
-        type='text'
-        placeholder='Search Player...'
-        value={playerToSearch}
-        onChange={(e) => setPlayerToSearch(e.target.value)}
-      />
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          handlePlayerSearch()
+        }}
+      >
+        <input
+          type='text'
+          placeholder='Search Player...'
+          value={playerToSearch}
+          onChange={(e) => setPlayerToSearch(e.target.value)}
+        />
 
-      <button onClick={handlePlayerSearch}>Search</button>
+        <button type='submit'>Search</button>
+      </form>
 
       {foundPlayers.map((player: any) => (
         <div key={player.id}>
