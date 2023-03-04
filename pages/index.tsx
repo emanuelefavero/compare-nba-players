@@ -1,29 +1,15 @@
 import { useState, FormEvent } from 'react'
 import Stats from '@/components/Stats'
+import Header from '@/components/Header'
 
 import { IPlayer, IPlayerStats } from '@/types'
 
 export default function Home() {
-  const [playerToSearch, setPlayerToSearch] = useState('')
   const [foundPlayers, setFoundPlayers] = useState<IPlayer[]>([])
   const [player1, setPlayer1] = useState<IPlayer | null>(null)
   const [player2, setPlayer2] = useState<IPlayer | null>(null)
   const [player1Stats, setPlayer1Stats] = useState<IPlayerStats | null>(null)
   const [player2Stats, setPlayer2Stats] = useState<IPlayerStats | null>(null)
-
-  const handlePlayerSearch = async () => {
-    const response = await fetch(
-      `https://www.balldontlie.io/api/v1/players?search=${playerToSearch}`
-    )
-    const data = await response.json()
-    setFoundPlayers(data.data)
-  }
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      handlePlayerSearch()
-    }
-  }
 
   const handleCompare = async () => {
     const response1 = await fetch(
@@ -43,22 +29,7 @@ export default function Home() {
 
   return (
     <>
-      <form
-        onSubmit={(e: FormEvent<HTMLFormElement>) => {
-          e.preventDefault()
-          handlePlayerSearch()
-        }}
-      >
-        <input
-          type='text'
-          placeholder='Search player...'
-          value={playerToSearch}
-          onChange={(e) => setPlayerToSearch(e.target.value)}
-          onKeyDown={handleKeyDown}
-        />
-
-        <button type='submit'>Search</button>
-      </form>
+      <Header setFoundPlayers={setFoundPlayers} />
 
       {foundPlayers.map((player: IPlayer) => (
         <div key={player.id}>
