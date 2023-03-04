@@ -53,10 +53,13 @@ export default function Home() {
       <main>
         {foundPlayers.map((player: IPlayer) => (
           <div key={player.id}>
-            <FoundPlayer
-              player={player}
-              handleAddPlayerForComparison={handleAddPlayerForComparison}
-            />
+            {/* // ? If player.position is found, it means the player is active. Show only active players */}
+            {player.position && (
+              <FoundPlayer
+                player={player}
+                handleAddPlayerForComparison={handleAddPlayerForComparison}
+              />
+            )}
           </div>
 
           // <div key={player.id}>
