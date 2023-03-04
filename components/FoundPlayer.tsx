@@ -24,8 +24,8 @@ export default function FoundPlayer({
             <Image
               src={`/nba-logos/${player.team.abbreviation}.svg`}
               alt='logo'
-              width={40}
-              height={40}
+              width={32}
+              height={32}
             />
           )}
           <p>{player.team.name}</p>

@@ -1,0 +1,46 @@
+.foundPlayer {
+  margin-bottom: 1rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(155, 180, 255, 0.1);
+
+  section.left {
+    width: 100%;
+    border-right: 1px solid rgba(155, 180, 255, 0.1);
+
+    h2.name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+
+      .firstName {
+        font-weight: 300;
+        margin-bottom: 0.3rem;
+      }
+    }
+
+    .team {
+      font-size: 0.875rem;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      // style all children except the last one
+      & > :not(:last-child) {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  section.right {
+    width: 100%;
+    background-color: rgba(172, 255, 47, 0.133);
+  }
+}
