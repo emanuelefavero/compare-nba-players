@@ -29,20 +29,31 @@ export default function FoundPlayer({
             />
           )}
           <p>{player.team.name}</p>
-          <p>•</p>
-          <p>{player.position}</p>
+          {player.position && (
+            <>
+              <p>•</p>
+
+              <p>{player.position}</p>
+            </>
+          )}
         </div>
       </section>
       <section className={styles.right}>
         <div className={styles.playerHeight}>
           <p>HT</p>
-          {player.height_feet && player.height_inches && (
+          {player.height_feet && player.height_inches ? (
             <p>{`${player.height_feet}' ${player.height_inches}''`}</p>
+          ) : (
+            <p>❔</p>
           )}
         </div>
         <div className={styles.playerWeight}>
           <p>WT</p>
-          {player.weight_pounds && <p>{`${player.weight_pounds} lbs`}</p>}
+          {player.weight_pounds ? (
+            <p>{`${player.weight_pounds} lbs`}</p>
+          ) : (
+            <p>❔</p>
+          )}
         </div>
         <button
           className={styles.addPlayer}
