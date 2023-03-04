@@ -65,6 +65,7 @@
     }
 
     button {
+      position: relative;
       color: #25ca6a;
       border: none;
       box-shadow: none;
@@ -81,21 +82,10 @@
         animation-iteration-count: 2;
       }
 
-      @keyframes bounce {
-        0% {
-          top: 0;
-        }
-        50% {
-          top: -1px;
-        }
-        100% {
-          top: 0;
-        }
-      }
-
       &:hover {
         color: #2edc77;
         text-decoration: underline;
+        left: 1px;
       }
 
       &:active {
@@ -104,5 +94,17 @@
         text-shadow: 0 0 0.3rem #025f35;
       }
     }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -1px;
+  }
+  100% {
+    top: 0;
   }
 }
