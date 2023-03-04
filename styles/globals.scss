@@ -105,12 +105,13 @@ a:hover {
 
 button {
   cursor: pointer;
-  border: none;
+  border: 1px solid #000;
   outline: none;
 
   background-color: var(--color-primary);
   color: #fff;
-  box-shadow: inset -2px -2px 0 2px var(--color-primary-darker);
+  box-shadow: inset -2px -2px 0 2px var(--color-primary-darker),
+    inset -2px -2px 0 3px rgba(0, 0, 0, 0.3);
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: -0.01rem;
@@ -124,7 +125,8 @@ button:hover {
 
 button:active {
   transform: translateY(1px);
-  box-shadow: inset -1px -1px 0 1px var(--color-primary-darker);
+  box-shadow: inset -1px -1px 0 1px var(--color-primary-darker),
+    inset -1px -1px 0 2px rgba(0, 0, 0, 0.3);
 }
 
 button:focus {
