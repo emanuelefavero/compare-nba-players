@@ -40,7 +40,7 @@ export default function FoundPlayer({
       </section>
       <section className={styles.right}>
         <div className={styles.playerHeight}>
-          <p>HT</p>
+          HT
           {player.height_feet && player.height_inches ? (
             <p>{`${player.height_feet}' ${player.height_inches}''`}</p>
           ) : (
@@ -48,7 +48,7 @@ export default function FoundPlayer({
           )}
         </div>
         <div className={styles.playerWeight}>
-          <p>WT</p>
+          WT
           {player.weight_pounds ? (
             <p>{`${player.weight_pounds} lbs`}</p>
           ) : (
@@ -59,7 +59,7 @@ export default function FoundPlayer({
           className={styles.addPlayer}
           onClick={() => handleAddPlayerForComparison(player)}
         >
-          Add +
+          Add <span className={styles.icon}>+</span>
         </button>
       </section>
     </div>

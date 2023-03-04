@@ -32,6 +32,10 @@
       flex-direction: row;
       align-items: center;
 
+      p {
+        color: rgba(194, 209, 255, 0.6);
+      }
+
       // style all children except the last one
       & > :not(:last-child) {
         margin-right: 0.5rem;
@@ -41,6 +45,64 @@
 
   section.right {
     width: 100%;
-    background-color: rgba(172, 255, 47, 0.133);
+
+    // style all children
+    & > div {
+      color: rgba(194, 209, 255, 0.6);
+      font-weight: 300;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 0.5rem;
+
+      p {
+        color: rgba(194, 209, 255, 0.6);
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 0;
+        margin-left: 1rem;
+      }
+    }
+
+    button {
+      color: #25ca6a;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+      background: none;
+
+      text-shadow: 0 0 0.3rem #025f35;
+
+      .icon {
+        position: relative;
+        animation: bounce 1s;
+        animation-iteration-count: 2;
+      }
+
+      @keyframes bounce {
+        0% {
+          top: 0;
+        }
+        50% {
+          top: -1px;
+        }
+        100% {
+          top: 0;
+        }
+      }
+
+      &:hover {
+        color: #2edc77;
+        text-decoration: underline;
+      }
+
+      &:active {
+        transform: translateX(1px);
+        color: #25ca6a;
+        text-shadow: 0 0 0.3rem #025f35;
+      }
+    }
   }
 }
