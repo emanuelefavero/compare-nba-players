@@ -2,6 +2,7 @@ import { useState, FormEvent } from 'react'
 import Image from 'next/image'
 import Stats from '@/components/Stats'
 import Header from '@/components/Header'
+import FoundPlayer from '@/components/FoundPlayer'
 
 import { IPlayer, IPlayerStats } from '@/types'
 
@@ -52,40 +53,47 @@ export default function Home() {
       <main>
         {foundPlayers.map((player: IPlayer) => (
           <div key={player.id}>
-            {/* Player Info ----- */}
-            <h2>
-              {player.first_name} {player.last_name}
-            </h2>
-
-            {player.team.abbreviation && (
-              <Image
-                src={`/nba-logos/${player.team.abbreviation}.svg`}
-                alt='logo'
-                width={40}
-                height={40}
-              />
-            )}
-
-            <h3>
-              {player.team.city} {player.team.name}
-            </h3>
-
-            <h4>{player.team.conference}</h4>
-
-            <p>{player.position}</p>
-
-            {player.height_feet && player.height_inches && (
-              <h4>{`${player.height_feet}' ${player.height_inches}''`}</h4>
-            )}
-
-            {player.weight_pounds && <h4>{`${player.weight_pounds} lbs`}</h4>}
-
-            {/* ----- */}
-
-            <button onClick={() => handleAddPlayerForComparison(player)}>
-              Add Player For Comparison
-            </button>
+            <FoundPlayer
+              player={player}
+              handleAddPlayerForComparison={handleAddPlayerForComparison}
+            />
           </div>
+
+          // <div key={player.id}>
+          //   {/* Player Info ----- */}
+          //   <h2>
+          //     {player.first_name} {player.last_name}
+          //   </h2>
+
+          //   {player.team.abbreviation && (
+          //     <Image
+          //       src={`/nba-logos/${player.team.abbreviation}.svg`}
+          //       alt='logo'
+          //       width={40}
+          //       height={40}
+          //     />
+          //   )}
+
+          //   <h3>
+          //     {player.team.city} {player.team.name}
+          //   </h3>
+
+          //   <h4>{player.team.conference}</h4>
+
+          //   <p>{player.position}</p>
+
+          //   {player.height_feet && player.height_inches && (
+          //     <h4>{`${player.height_feet}' ${player.height_inches}''`}</h4>
+          //   )}
+
+          //   {player.weight_pounds && <h4>{`${player.weight_pounds} lbs`}</h4>}
+
+          //   {/* ----- */}
+
+          //   <button onClick={() => handleAddPlayerForComparison(player)}>
+          //     Add Player For Comparison
+          //   </button>
+          // </div>
         ))}
 
         {/* Selected Players */}
