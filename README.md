@@ -20,3 +20,7 @@ This is a nextjs app that allows you to compare NBA players. It uses the [balldo
 - [React](https://reactjs.org/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Tailwind Cheat Sheet](https://nerdcave.com/tailwind-cheat-sheet)
+
+## License
+
+- [MIT](LICENSE.md)
