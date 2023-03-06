@@ -74,7 +74,7 @@
 
     button {
       position: relative;
-      color: #25ca6a;
+      color: var(--color-primary-text-lighter);
       border: none;
       box-shadow: none;
       padding: 0;
@@ -83,7 +83,7 @@
       background: none;
       user-select: none;
 
-      text-shadow: 0 0 0.3rem #025f35;
+      text-shadow: 0 0 0.3rem rgba(218, 122, 5, 0.5);
 
       .icon {
         position: relative;
@@ -92,16 +92,30 @@
       }
 
       &:hover {
-        color: #2edc77;
+        color: var(--color-primary-text-hover);
         text-decoration: underline;
         left: 1px;
       }
 
       &:active {
         transform: translateX(1px);
-        color: #25ca6a;
-        text-shadow: 0 0 0.3rem #025f35;
+        color: var(--color-primary-text-hover);
+        // text-shadow: 0 0 0.3rem rgba(218, 122, 5, 0.5);
       }
+    }
+
+    .showPlayerSlot {
+      position: relative;
+      top: 0.5rem;
+      color: #25ca6a;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+      background: none;
+      user-select: none;
     }
   }
 }

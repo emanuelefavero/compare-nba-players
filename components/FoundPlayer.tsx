@@ -5,11 +5,15 @@ import { IPlayer } from '@/types'
 
 interface Props {
   player: IPlayer
+  player1: IPlayer | null
+  player2: IPlayer | null
   handleAddPlayerForComparison: (player: IPlayer) => void
 }
 
 export default function FoundPlayer({
   player,
+  player1,
+  player2,
   handleAddPlayerForComparison,
 }: Props) {
   return (
@@ -55,12 +59,30 @@ export default function FoundPlayer({
             <p>❔</p>
           )}
         </div>
-        <button
-          className={styles.addPlayer}
-          onClick={() => handleAddPlayerForComparison(player)}
-        >
-          Add <span className={styles.icon}>+</span>
-        </button>
+
+        {/* When the user clicks on add + button the button shows which slot the player is set to (between player1 and player2) */}
+        {player === player1 ? (
+          <div
+            className={styles.showPlayerSlot}
+            onClick={(e) => e.preventDefault()}
+          >
+            Player 1
+          </div>
+        ) : player === player2 ? (
+          <div
+            className={styles.showPlayerSlot}
+            onClick={(e) => e.preventDefault()}
+          >
+            Player 2
+          </div>
+        ) : (
+          <button
+            className={styles.addPlayer}
+            onClick={() => handleAddPlayerForComparison(player)}
+          >
+            Add <span className={styles.icon}>+</span>
+          </button>
+        )}
       </section>
     </div>
   )

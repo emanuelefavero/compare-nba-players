@@ -56,6 +56,8 @@ export default function Home() {
             {player.position && (
               <FoundPlayer
                 player={player}
+                player1={player1}
+                player2={player2}
                 handleAddPlayerForComparison={handleAddPlayerForComparison}
               />
             )}
