@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import FoundPlayer from '@/components/FoundPlayer'
 import SelectedPlayers from '@/components/SelectedPlayers'
 import CompareButton from '@/components/CompareButton'
+import ComparedPlayersInfo from '@/components/ComparedPlayersInfo'
 
 import { IPlayer, IPlayerStats } from '@/types'
 
@@ -77,23 +78,9 @@ export default function Home() {
           />
         )}
 
-        {/* Stats */}
-        {/* TODO: Remove this section */}
-        {/* {player1Stats && (
-          <div>
-            <h2>
-              {player1?.first_name} {player1?.last_name}
-            </h2>
-          </div>
+        {player1Stats && player2Stats && (
+          <ComparedPlayersInfo player1={player1} player2={player2} />
         )}
-
-        {player2Stats && (
-          <div>
-            <h2>
-              {player2?.first_name} {player2?.last_name}
-            </h2>
-          </div>
-        )} */}
 
         {/* Stats */}
         {player1Stats && player2Stats && (

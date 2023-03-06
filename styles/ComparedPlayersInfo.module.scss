@@ -1,0 +1,23 @@
+section.comparedPlayersInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .vs {
+    margin: 0 1rem;
+    // font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-success);
+  }
+}
