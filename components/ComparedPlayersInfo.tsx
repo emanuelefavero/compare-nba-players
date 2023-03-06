@@ -113,7 +113,15 @@ export default function ComparedPlayersInfo({ player1, player2 }: Props) {
 
       {/* PLAYER 2 */}
       <div className={`${styles.player} ${styles.player2}`}>
+        {/* Image And Name */}
         <div className={styles.imageAndName}>
+          {/* Name */}
+          <h2 className={styles.name}>
+            <div className={styles.firstName}>{player2?.first_name}</div>
+            <div>{player2?.last_name}</div>
+          </h2>
+
+          {/* Image */}
           {player2?.team.abbreviation && (
             <Image
               src={`/nba-logos/${player2.team.abbreviation}.svg`}
@@ -122,14 +130,13 @@ export default function ComparedPlayersInfo({ player1, player2 }: Props) {
               height={60}
             />
           )}
-          <h2 className={styles.name}>
-            <div className={styles.firstName}>{player2?.first_name}</div>
-            <div>{player2?.last_name}</div>
-          </h2>
         </div>
 
+        {/* Team And Position */}
         <div className={styles.teamAndPosition}>
+          {/* Team */}
           <p>{player2?.team.name}</p>
+          {/* Position */}
           {player2?.position && (
             <>
               <p className={styles.dot}>•</p>
