@@ -114,13 +114,7 @@ export default function ComparedPlayersInfo({ player1, player2 }: Props) {
       {/* PLAYER 2 */}
       <div className={`${styles.player} ${styles.player2}`}>
         {/* Image And Name */}
-        <div className={styles.imageAndName}>
-          {/* Name */}
-          <h2 className={styles.name}>
-            <div className={styles.firstName}>{player2?.first_name}</div>
-            <div>{player2?.last_name}</div>
-          </h2>
-
+        <div className={`${styles.imageAndName} ${styles.imageAndName2}`}>
           {/* Image */}
           {player2?.team.abbreviation && (
             <Image
@@ -130,6 +124,11 @@ export default function ComparedPlayersInfo({ player1, player2 }: Props) {
               height={60}
             />
           )}
+          {/* Name */}
+          <h2 className={`${styles.name} ${styles.name2}`}>
+            <div className={styles.firstName}>{player2?.first_name}</div>
+            <div>{player2?.last_name}</div>
+          </h2>
         </div>
 
         {/* Team And Position */}

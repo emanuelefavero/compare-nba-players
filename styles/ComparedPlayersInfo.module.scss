@@ -3,7 +3,7 @@ section.comparedPlayersInfo {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0.8rem auto;
+  margin: 0.8rem auto 2.5rem;
   width: 100%;
   padding: 0 0.62rem;
   box-sizing: border-box;
@@ -15,7 +15,7 @@ section.comparedPlayersInfo {
 
   .player {
     width: 100%;
-    padding: 1.25rem 2rem;
+    padding: 1.25rem 1.25rem;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -39,6 +39,58 @@ section.comparedPlayersInfo {
       border-left: 0;
       border-right: 1px solid rgba(93, 152, 255, 0.3);
     }
+  }
+
+  .imageAndName {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    img {
+      margin-right: 1.1rem;
+      border-radius: 50%;
+    }
+
+    &.imageAndName2 {
+      flex-direction: row-reverse;
+      margin-bottom: 1rem;
+
+      img {
+        margin-right: 0;
+        margin-left: 1.3rem;
+      }
+    }
+
+    h2.name {
+      position: relative;
+      top: 0.24rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      // font-size: 1.25rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+
+      .firstName {
+        font-weight: 300;
+        margin-bottom: 0.3rem;
+      }
+
+      &.name2 {
+        align-items: flex-end;
+      }
+    }
+  }
+
+  .teamAndPosition {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
   }
 
   .vs {
