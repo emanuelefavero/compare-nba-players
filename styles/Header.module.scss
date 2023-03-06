@@ -1,4 +1,5 @@
 header.header {
+  position: relative;
   background: #00000031;
   color: #fff;
 
@@ -68,5 +69,30 @@ header.header {
   }
   50% {
     transform: rotate(-360deg);
+  }
+}
+
+@media (max-width: 456px) {
+  header.header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    form {
+      margin-top: 1rem;
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      // align-items: flex-start;
+
+      input {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      button {
+        margin-left: 0;
+      }
+    }
   }
 }
