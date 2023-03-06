@@ -50,6 +50,7 @@ section.comparedPlayersInfo {
 
     img {
       margin-right: 1.1rem;
+      user-select: none;
     }
 
     &.imageAndName2 {
@@ -90,6 +91,10 @@ section.comparedPlayersInfo {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+
+    .dot {
+      user-select: none;
+    }
   }
 
   .vs {
