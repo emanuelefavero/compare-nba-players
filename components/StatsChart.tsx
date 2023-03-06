@@ -33,18 +33,18 @@ export default function StatsChart({
         label: statisticName,
         data: [player2Statistic, player1Statistic],
         backgroundColor: [
-          'rgba(172, 205, 7, 0.888)',
           'rgba(93, 152, 255, 0.15)',
+          'rgba(172, 205, 7, 0.888)',
         ],
-        borderColor: ['rgba(172, 205, 7, 1)', 'rgba(93, 152, 255, 1)'],
+        borderColor: ['rgba(93, 152, 255, 1)', 'rgba(172, 205, 7, 1)'],
         borderWidth: 1,
 
         // Hover
         hoverBorderWidth: 2,
         // hoverBorderColor: 'white',
         hoverBackgroundColor: [
-          'rgba(197, 232, 19, 1)',
           'rgba(93, 152, 255, 1)',
+          'rgba(197, 232, 19, 1)',
         ],
       },
     ],
