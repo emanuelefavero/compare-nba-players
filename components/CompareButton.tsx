@@ -6,6 +6,9 @@ interface Props {
   player2: IPlayer | null
   setPlayer1Stats: (playerStats: IPlayerStats) => void
   setPlayer2Stats: (playerStats: IPlayerStats) => void
+  setShowFoundPlayers: (show: boolean) => void
+  setShowSelectedPlayers: (show: boolean) => void
+  setShowCompareButton: (show: boolean) => void
 }
 
 export default function CompareButton({
@@ -13,6 +16,9 @@ export default function CompareButton({
   player2,
   setPlayer1Stats,
   setPlayer2Stats,
+  setShowFoundPlayers,
+  setShowSelectedPlayers,
+  setShowCompareButton,
 }: Props) {
   const handleCompare = async () => {
     const response1 = await fetch(
@@ -26,6 +32,10 @@ export default function CompareButton({
     )
     const data2 = await response2.json()
     setPlayer2Stats(data2.data[0])
+
+    setShowFoundPlayers(false) // Hide found players
+    setShowSelectedPlayers(false) // Hide selected players
+    setShowCompareButton(false) // Hide compare button
   }
 
   if (player1 && player2) {

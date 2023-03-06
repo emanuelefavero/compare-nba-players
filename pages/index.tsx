@@ -14,6 +14,9 @@ export default function Home() {
   const [lastAddedPlayer, setLastAddedPlayer] = useState<IPlayer | null>(null)
   const [player1Stats, setPlayer1Stats] = useState<IPlayerStats | null>(null)
   const [player2Stats, setPlayer2Stats] = useState<IPlayerStats | null>(null)
+  const [showFoundPlayers, setShowFoundPlayers] = useState(false)
+  const [showSelectedPlayers, setShowSelectedPlayers] = useState(false)
+  const [showCompareButton, setShowCompareButton] = useState(false)
 
   const handleAddPlayerForComparison = (player: IPlayer) => {
     if (!player1) {
@@ -35,31 +38,44 @@ export default function Home() {
 
   return (
     <>
-      <Header setFoundPlayers={setFoundPlayers} />
+      <Header
+        setFoundPlayers={setFoundPlayers}
+        setShowFoundPlayers={setShowFoundPlayers}
+        setShowSelectedPlayers={setShowSelectedPlayers}
+        setShowCompareButton={setShowCompareButton}
+      />
 
       <main>
-        {foundPlayers.map((player: IPlayer) => (
-          <div key={player.id}>
-            {/* // ? If player.position is found, it means the player is active. Show only active players */}
-            {player.position && (
-              <FoundPlayer
-                player={player}
-                player1={player1}
-                player2={player2}
-                handleAddPlayerForComparison={handleAddPlayerForComparison}
-              />
-            )}
-          </div>
-        ))}
+        {showFoundPlayers &&
+          foundPlayers.map((player: IPlayer) => (
+            <div key={player.id}>
+              {/* // ? If player.position is found, it means the player is active. Show only active players */}
+              {player.position && (
+                <FoundPlayer
+                  player={player}
+                  player1={player1}
+                  player2={player2}
+                  handleAddPlayerForComparison={handleAddPlayerForComparison}
+                />
+              )}
+            </div>
+          ))}
 
-        <SelectedPlayers player1={player1} player2={player2} />
+        {showSelectedPlayers && (
+          <SelectedPlayers player1={player1} player2={player2} />
+        )}
 
-        <CompareButton
-          player1={player1}
-          player2={player2}
-          setPlayer1Stats={setPlayer1Stats}
-          setPlayer2Stats={setPlayer2Stats}
-        />
+        {showCompareButton && (
+          <CompareButton
+            player1={player1}
+            player2={player2}
+            setPlayer1Stats={setPlayer1Stats}
+            setPlayer2Stats={setPlayer2Stats}
+            setShowFoundPlayers={setShowFoundPlayers}
+            setShowSelectedPlayers={setShowSelectedPlayers}
+            setShowCompareButton={setShowCompareButton}
+          />
+        )}
 
         {/* Stats */}
         {/* TODO: Remove this section */}

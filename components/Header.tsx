@@ -7,9 +7,17 @@ import { IPlayer } from '@/types'
 
 interface Props {
   setFoundPlayers: (players: IPlayer[]) => void
+  setShowFoundPlayers: (show: boolean) => void
+  setShowSelectedPlayers: (show: boolean) => void
+  setShowCompareButton: (show: boolean) => void
 }
 
-export default function Header({ setFoundPlayers }: Props) {
+export default function Header({
+  setFoundPlayers,
+  setShowFoundPlayers,
+  setShowSelectedPlayers,
+  setShowCompareButton,
+}: Props) {
   const [playerToSearch, setPlayerToSearch] = useState('')
 
   const handlePlayerSearch = async () => {
@@ -18,6 +26,10 @@ export default function Header({ setFoundPlayers }: Props) {
     )
     const data = await response.json()
     setFoundPlayers(data.data)
+
+    setShowFoundPlayers(true) // Show found players
+    setShowSelectedPlayers(true) // Hide selected players
+    setShowCompareButton(true) // Hide compare button
   }
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
