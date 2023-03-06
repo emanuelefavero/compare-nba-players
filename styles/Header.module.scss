@@ -46,7 +46,7 @@ header.header {
     }
 
     input:focus {
-      // border-bottom: 2px solid var(--color-primary);
+      background: rgba(169, 198, 255, 0.06);
       border: 1px solid var(--color-primary);
     }
 
