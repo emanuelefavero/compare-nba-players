@@ -2,6 +2,7 @@ import { useState, FormEvent } from 'react'
 import Stats from '@/components/Stats'
 import Header from '@/components/Header'
 import FoundPlayer from '@/components/FoundPlayer'
+import SelectedPlayers from '@/components/SelectedPlayers'
 
 import { IPlayer, IPlayerStats } from '@/types'
 
@@ -64,22 +65,7 @@ export default function Home() {
           </div>
         ))}
 
-        {/* Selected Players */}
-        {player1 && (
-          <div>
-            <p>
-              {player1.first_name} {player1.last_name}
-            </p>
-          </div>
-        )}
-
-        {player2 && (
-          <div>
-            <p>
-              {player2.first_name} {player2.last_name}
-            </p>
-          </div>
-        )}
+        <SelectedPlayers player1={player1} player2={player2} />
 
         <button onClick={handleCompare}>Compare</button>
 

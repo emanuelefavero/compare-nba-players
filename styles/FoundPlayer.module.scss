@@ -83,7 +83,7 @@
       background: none;
       user-select: none;
 
-      text-shadow: 0 0 0.3rem rgba(218, 122, 5, 0.5);
+      text-shadow: 0 0 0.3rem var(--color-primary-text-shadow);
 
       .icon {
         position: relative;
@@ -100,14 +100,14 @@
       &:active {
         transform: translateX(1px);
         color: var(--color-primary-text-hover);
-        // text-shadow: 0 0 0.3rem rgba(218, 122, 5, 0.5);
+        text-shadow: none;
       }
     }
 
     .showPlayerSlot {
       position: relative;
       top: 0.5rem;
-      color: #25ca6a;
+      color: var(--color-success);
       border: none;
       box-shadow: none;
       padding: 0;
