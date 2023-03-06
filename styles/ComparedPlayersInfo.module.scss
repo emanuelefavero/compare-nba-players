@@ -8,10 +8,10 @@ section.comparedPlayersInfo {
   padding: 0 1rem;
   box-sizing: border-box;
 
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  // @media (min-width: 768px) {
+  //   flex-direction: row;
+  //   justify-content: space-between;
+  // }
 
   .vs {
     width: 100%;
