@@ -9,13 +9,15 @@ interface Props {
 export default function ComparedPlayersInfo({ player1, player2 }: Props) {
   return (
     <section className={styles.comparedPlayersInfo}>
-      <h2>
+      <div className={styles.player1}>
         {player1?.first_name} {player1?.last_name}
-      </h2>
-      <h2 className={styles.vs}>VS</h2>
-      <h2>
+      </div>
+      <div className={styles.vs}>
+        <span className={styles.text}>VS</span>
+      </div>
+      <div className={styles.player2}>
         {player2?.first_name} {player2?.last_name}
-      </h2>
+      </div>
     </section>
   )
 }
