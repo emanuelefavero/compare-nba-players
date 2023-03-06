@@ -3,15 +3,43 @@ section.comparedPlayersInfo {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 0.8rem auto;
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 0.62rem;
   box-sizing: border-box;
 
   // @media (min-width: 768px) {
   //   flex-direction: row;
   //   justify-content: space-between;
   // }
+
+  .player {
+    width: 100%;
+    padding: 1.25rem 2rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-items: flex-start;
+    background: linear-gradient(
+      90deg,
+      rgba(197, 232, 19, 0.06) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    border-left: 1px solid rgba(197, 232, 19, 0.3);
+
+    &.player2 {
+      align-items: flex-end;
+      background: linear-gradient(
+        270deg,
+        rgba(93, 152, 255, 0.06) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      border-left: 0;
+      border-right: 1px solid rgba(93, 152, 255, 0.3);
+    }
+  }
 
   .vs {
     width: 100%;

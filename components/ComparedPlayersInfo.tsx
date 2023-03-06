@@ -81,8 +81,8 @@ export default function ComparedPlayersInfo({ player1, player2 }: Props) {
             <Image
               src={`/nba-logos/${player1.team.abbreviation}.svg`}
               alt='logo'
-              width={32}
-              height={32}
+              width={60}
+              height={60}
             />
           )}
           {/* Name */}
@@ -118,8 +118,8 @@ export default function ComparedPlayersInfo({ player1, player2 }: Props) {
             <Image
               src={`/nba-logos/${player2.team.abbreviation}.svg`}
               alt='logo'
-              width={32}
-              height={32}
+              width={60}
+              height={60}
             />
           )}
           <h2 className={styles.name}>
