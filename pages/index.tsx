@@ -3,6 +3,7 @@ import Stats from '@/components/Stats'
 import Header from '@/components/Header'
 import FoundPlayer from '@/components/FoundPlayer'
 import SelectedPlayers from '@/components/SelectedPlayers'
+import CompareButton from '@/components/CompareButton'
 
 import { IPlayer, IPlayerStats } from '@/types'
 
@@ -67,7 +68,14 @@ export default function Home() {
 
         <SelectedPlayers player1={player1} player2={player2} />
 
-        <button onClick={handleCompare}>Compare</button>
+        <CompareButton
+          player1={player1}
+          player2={player2}
+          setPlayer1Stats={setPlayer1Stats}
+          setPlayer2Stats={setPlayer2Stats}
+        />
+
+        {/* <button onClick={handleCompare}>Compare</button> */}
 
         {/* Stats */}
         {/* TODO: Remove this section */}
