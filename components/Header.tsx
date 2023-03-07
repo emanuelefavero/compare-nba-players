@@ -6,6 +6,7 @@ import styles from '@/styles/Header.module.scss'
 import { IPlayer } from '@/types'
 
 interface Props {
+  searchInputRef: React.RefObject<HTMLInputElement>
   setFoundPlayers: (players: IPlayer[]) => void
   setShowFoundPlayers: (show: boolean) => void
   setShowSelectedPlayers: (show: boolean) => void
@@ -13,6 +14,7 @@ interface Props {
 }
 
 export default function Header({
+  searchInputRef,
   setFoundPlayers,
   setShowFoundPlayers,
   setShowSelectedPlayers,
@@ -51,6 +53,7 @@ export default function Header({
         }}
       >
         <input
+          ref={searchInputRef}
           type='text'
           placeholder='Search player...'
           value={playerToSearch}

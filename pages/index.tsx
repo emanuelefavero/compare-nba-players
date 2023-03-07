@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react'
+import { useState, useRef } from 'react'
 import Stats from '@/components/Stats'
 import Header from '@/components/Header'
 import WelcomeSection from '@/components/WelcomeSection'
@@ -10,6 +10,7 @@ import ComparedPlayersInfo from '@/components/ComparedPlayersInfo'
 import { IPlayer, IPlayerStats } from '@/types'
 
 export default function Home() {
+  const searchInputRef = useRef<HTMLInputElement>(null)
   const [foundPlayers, setFoundPlayers] = useState<IPlayer[]>([])
   const [player1, setPlayer1] = useState<IPlayer | null>(null)
   const [player2, setPlayer2] = useState<IPlayer | null>(null)
@@ -19,6 +20,12 @@ export default function Home() {
   const [showFoundPlayers, setShowFoundPlayers] = useState(false)
   const [showSelectedPlayers, setShowSelectedPlayers] = useState(false)
   const [showCompareButton, setShowCompareButton] = useState(false)
+
+  const handleFocusOnSearchInput = () => {
+    if (searchInputRef.current) {
+      searchInputRef.current.focus()
+    }
+  }
 
   const handleAddPlayerForComparison = (player: IPlayer) => {
     if (!player1) {
@@ -41,6 +48,7 @@ export default function Home() {
   return (
     <>
       <Header
+        searchInputRef={searchInputRef}
         setFoundPlayers={setFoundPlayers}
         setShowFoundPlayers={setShowFoundPlayers}
         setShowSelectedPlayers={setShowSelectedPlayers}
@@ -48,7 +56,7 @@ export default function Home() {
       />
 
       <main>
-        <WelcomeSection />
+        <WelcomeSection handleFocusOnSearchInput={handleFocusOnSearchInput} />
 
         {showFoundPlayers &&
           foundPlayers.map((player: IPlayer) => (
