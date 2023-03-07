@@ -11,6 +11,7 @@ interface Props {
   setShowFoundPlayers: (show: boolean) => void
   setShowSelectedPlayers: (show: boolean) => void
   setShowCompareButton: (show: boolean) => void
+  setShowWelcomeSection: (show: boolean) => void
 }
 
 export default function Header({
@@ -19,6 +20,7 @@ export default function Header({
   setShowFoundPlayers,
   setShowSelectedPlayers,
   setShowCompareButton,
+  setShowWelcomeSection,
 }: Props) {
   const [playerToSearch, setPlayerToSearch] = useState('')
 
@@ -50,6 +52,7 @@ export default function Header({
         onSubmit={(e: FormEvent<HTMLFormElement>) => {
           e.preventDefault()
           handlePlayerSearch()
+          setShowWelcomeSection(false) // Hide welcome section
         }}
       >
         <input

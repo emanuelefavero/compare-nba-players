@@ -20,6 +20,7 @@ export default function Home() {
   const [showFoundPlayers, setShowFoundPlayers] = useState(false)
   const [showSelectedPlayers, setShowSelectedPlayers] = useState(false)
   const [showCompareButton, setShowCompareButton] = useState(false)
+  const [showWelcomeSection, setShowWelcomeSection] = useState(true)
 
   const handleFocusOnSearchInput = () => {
     if (searchInputRef.current) {
@@ -53,10 +54,13 @@ export default function Home() {
         setShowFoundPlayers={setShowFoundPlayers}
         setShowSelectedPlayers={setShowSelectedPlayers}
         setShowCompareButton={setShowCompareButton}
+        setShowWelcomeSection={setShowWelcomeSection}
       />
 
       <main>
-        <WelcomeSection handleFocusOnSearchInput={handleFocusOnSearchInput} />
+        {showWelcomeSection && (
+          <WelcomeSection handleFocusOnSearchInput={handleFocusOnSearchInput} />
+        )}
 
         {showFoundPlayers &&
           foundPlayers.map((player: IPlayer) => (
