@@ -1,0 +1,110 @@
+section.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc((100vh - 70px) - 3rem);
+  // width: 100%;
+
+  color: #fff;
+
+  /* BUTTON ROTATING GRADIENT */
+  .buttonRotatingGradient {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+
+    /* Text Color */
+    color: #eef7ff;
+
+    /* Size */
+    // width: 75px;
+    // height: 75px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    // text-transform: uppercase;
+
+    /* Padding */
+    padding: 0.6rem 1.15rem;
+
+    /* Shadow */
+    box-shadow: 0px 1px 3px 1px #04060a60;
+
+    /* Border Radius */
+    border-radius: 100px;
+
+    transform: translateZ(0);
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+    }
+
+    /* Conic Gradient Animation */
+    &::before {
+      // * Width and Height should change when you put different text in the button
+      // ? Turn off background-color in &::after during testing
+      width: 600%;
+      height: 600%;
+
+      /* Animation Speed */
+      animation: 5s rotate linear infinite;
+
+      /* Gradient Color */
+      background: conic-gradient(
+        var(--color-primary),
+        rgba(205, 113, 0, 0.5),
+        rgba(205, 113, 0, 0.284),
+        rgba(205, 113, 0, 0.223),
+        rgba(205, 113, 0, 0.126),
+        rgba(205, 113, 0, 0.128),
+        var(--color-primary)
+      );
+    }
+
+    /* Inner Square */
+    &::after {
+      /* Border Size */
+      padding: 1px;
+
+      /* Border Radius */
+      border-radius: 100px;
+
+      /* Background Color */
+      background: linear-gradient(to bottom right, #0b101a, #131c2c);
+
+      inset: 0;
+      background-clip: content-box;
+    }
+
+    /* Hover Effect */
+    &:hover {
+      border: 0.5px solid var(--color-primary);
+    }
+
+    /* Active Effect */
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  @media (max-width: 456px) {
+    height: calc((100vh - 177px) - 3rem);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

@@ -1,6 +1,7 @@
 import { useState, FormEvent } from 'react'
 import Stats from '@/components/Stats'
 import Header from '@/components/Header'
+import WelcomeSection from '@/components/WelcomeSection'
 import FoundPlayer from '@/components/FoundPlayer'
 import SelectedPlayers from '@/components/SelectedPlayers'
 import CompareButton from '@/components/CompareButton'
@@ -47,6 +48,8 @@ export default function Home() {
       />
 
       <main>
+        <WelcomeSection />
+
         {showFoundPlayers &&
           foundPlayers.map((player: IPlayer) => (
             <div key={player.id}>
