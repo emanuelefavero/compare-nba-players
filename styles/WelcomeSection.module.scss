@@ -1,4 +1,5 @@
 section.welcome {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,6 +8,50 @@ section.welcome {
   // width: 100%;
 
   color: #fff;
+
+  // MESSAGE
+  .message {
+    position: absolute;
+    top: 0;
+    right: 10.2rem;
+    color: var(--color-success);
+    font-size: 1.15rem;
+    transition: 0.5s;
+    // text-transform: uppercase;
+
+    animation: 1s fadeIn ease-in-out;
+
+    .arrow {
+      margin-right: 0.1rem;
+      position: relative;
+      animation: 1s arrowBounce ease-in-out infinite;
+    }
+
+    @keyframes arrowBounce {
+      0% {
+        top: 0;
+      }
+      50% {
+        top: 0.2rem;
+      }
+      100% {
+        top: 0;
+      }
+    }
+
+    @media screen and (max-width: 456px) {
+      left: 1rem;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
   /* BUTTON ROTATING GRADIENT */
   .buttonRotatingGradient {
