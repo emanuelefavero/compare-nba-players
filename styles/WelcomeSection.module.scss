@@ -1,9 +1,9 @@
 section.welcome {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
   height: calc((100vh - 70px) - 3rem);
   // width: 100%;
 
@@ -55,7 +55,13 @@ section.welcome {
 
   /* BUTTON ROTATING GRADIENT */
   .buttonRotatingGradient {
-    position: relative;
+    // Center element in absolute position
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,7 +88,7 @@ section.welcome {
     /* Border Radius */
     border-radius: 100px;
 
-    transform: translateZ(0);
+    // transform: translateZ(0);
     overflow: hidden;
 
     &::before,
@@ -136,7 +142,8 @@ section.welcome {
 
     /* Active Effect */
     &:active {
-      transform: translateY(2px);
+      // transform: translateY(2px);
+      transform: translate(-50%, -48%);
     }
   }
 
