@@ -1,5 +1,6 @@
 import { Chart, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Doughnut } from 'react-chartjs-2'
+import getTeamColor from '@/utils/getTeamColor'
 
 Chart.register(ArcElement, Tooltip, Legend)
 
@@ -17,6 +18,8 @@ interface Props {
   statisticName: string
   player1Name: string
   player2Name: string
+  player1Team?: string
+  player2Team?: string
 }
 
 export default function StatsChart({
@@ -25,26 +28,30 @@ export default function StatsChart({
   statisticName,
   player1Name,
   player2Name,
+  player1Team,
+  player2Team,
 }: Props) {
   const data = {
-    labels: [player2Name, player1Name],
+    labels: [player1Team, player1Name],
     datasets: [
       {
         label: statisticName,
         data: [player2Statistic, player1Statistic],
         backgroundColor: [
-          'rgba(93, 152, 255, 0.15)',
-          'rgba(172, 205, 7, 0.888)',
+          getTeamColor(player2Team, 0.3),
+          getTeamColor(player1Team),
         ],
-        borderColor: ['rgba(93, 152, 255, 1)', 'rgba(172, 205, 7, 1)'],
-        borderWidth: 1,
+
+        borderColor: [getTeamColor(player2Team), getTeamColor(player1Team)],
+        borderWidth: 1.5,
 
         // Hover
         hoverBorderWidth: 2,
-        // hoverBorderColor: 'white',
+        hoverBorderColor: 'rgba(255, 255, 255, 0.8)',
+
         hoverBackgroundColor: [
-          'rgba(93, 152, 255, 1)',
-          'rgba(197, 232, 19, 1)',
+          getTeamColor(player2Team),
+          getTeamColor(player1Team),
         ],
       },
     ],

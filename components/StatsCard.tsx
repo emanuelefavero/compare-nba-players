@@ -9,6 +9,8 @@ interface Props {
   player2Statistic: number
   player1Name: string
   player2Name: string
+  player1Team?: string
+  player2Team?: string
 }
 
 export default function StatsCard({
@@ -18,6 +20,8 @@ export default function StatsCard({
   player2Statistic,
   player1Name,
   player2Name,
+  player1Team,
+  player2Team,
 }: Props) {
   const [player1StatColor, setPlayer1StatColor] = useState('#fff')
   const [player2StatColor, setPlayer2StatColor] = useState('#fff')
@@ -70,6 +74,8 @@ export default function StatsCard({
             statisticName={statisticName} // 👈
             player1Name={player1Name}
             player2Name={player2Name}
+            player1Team={player1Team}
+            player2Team={player2Team}
           />
         </div>
 

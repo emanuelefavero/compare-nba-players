@@ -25,6 +25,8 @@ export default function Stats({
         player2Statistic={Number(player2Stats.pts.toFixed(1))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
+        player1Team={player1?.team.name}
+        player2Team={player2?.team.name}
       />
 
       <StatsCard
@@ -34,6 +36,8 @@ export default function Stats({
         player2Statistic={Number(player2Stats.ast.toFixed(1))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
+        player1Team={player1?.team.name}
+        player2Team={player2?.team.name}
       />
 
       <StatsCard
@@ -43,6 +47,8 @@ export default function Stats({
         player2Statistic={Number(player2Stats.reb.toFixed(1))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
+        player1Team={player1?.team.name}
+        player2Team={player2?.team.name}
       />
 
       <StatsCard
@@ -53,6 +59,8 @@ export default function Stats({
         player2Statistic={Number(player2Stats.fg_pct.toFixed(2).slice(2))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
+        player1Team={player1?.team.name}
+        player2Team={player2?.team.name}
       />
 
       <StatsCard
@@ -62,6 +70,8 @@ export default function Stats({
         player2Statistic={Number(player2Stats.fg3_pct.toFixed(2).slice(2))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
+        player1Team={player1?.team.name}
+        player2Team={player2?.team.name}
       />
 
       <StatsCard
@@ -71,6 +81,8 @@ export default function Stats({
         player2Statistic={Number(player2Stats.ft_pct.toFixed(2).slice(2))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
+        player1Team={player1?.team.name}
+        player2Team={player2?.team.name}
       />
 
       <StatsCard
@@ -81,6 +93,8 @@ export default function Stats({
         player2Statistic={Number(player2Stats.fgm.toFixed(1))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
+        player1Team={player1?.team.name}
+        player2Team={player2?.team.name}
       />
 
       <StatsCard
@@ -90,6 +104,8 @@ export default function Stats({
         player2Statistic={Number(player2Stats.fga.toFixed(1))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
+        player1Team={player1?.team.name}
+        player2Team={player2?.team.name}
       />
 
       <StatsCard
@@ -99,6 +115,8 @@ export default function Stats({
         player2Statistic={Number(player2Stats.fg3m.toFixed(1))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
+        player1Team={player1?.team.name}
+        player2Team={player2?.team.name}
       />
 
       <StatsCard
@@ -108,6 +126,8 @@ export default function Stats({
         player2Statistic={Number(player2Stats.ftm.toFixed(1))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
+        player1Team={player1?.team.name}
+        player2Team={player2?.team.name}
       />
 
       <StatsCard
@@ -117,6 +137,8 @@ export default function Stats({
         player2Statistic={Number(player2Stats.fta.toFixed(1))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
+        player1Team={player1?.team.name}
+        player2Team={player2?.team.name}
       />
 
       <StatsCard
@@ -126,6 +148,8 @@ export default function Stats({
         player2Statistic={Number(player2Stats.oreb.toFixed(1))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
+        player1Team={player1?.team.name}
+        player2Team={player2?.team.name}
       />
 
       <StatsCard
@@ -135,6 +159,8 @@ export default function Stats({
         player2Statistic={Number(player2Stats.dreb.toFixed(1))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
+        player1Team={player1?.team.name}
+        player2Team={player2?.team.name}
       />
 
       <StatsCard
@@ -144,6 +170,8 @@ export default function Stats({
         player2Statistic={Number(player2Stats.stl.toFixed(1))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
+        player1Team={player1?.team.name}
+        player2Team={player2?.team.name}
       />
 
       <StatsCard
@@ -153,6 +181,8 @@ export default function Stats({
         player2Statistic={Number(player2Stats.blk.toFixed(1))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
+        player1Team={player1?.team.name}
+        player2Team={player2?.team.name}
       />
 
       <StatsCard
@@ -162,6 +192,8 @@ export default function Stats({
         player2Statistic={Number(player2Stats.turnover.toFixed(1))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
+        player1Team={player1?.team.name}
+        player2Team={player2?.team.name}
       />
 
       <StatsCard
@@ -171,6 +203,8 @@ export default function Stats({
         player2Statistic={Number(player2Stats.pf.toFixed(1))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
+        player1Team={player1?.team.name}
+        player2Team={player2?.team.name}
       />
     </section>
   )
