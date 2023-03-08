@@ -85,7 +85,7 @@ section.welcome {
     // text-transform: uppercase;
 
     /* Padding */
-    padding: 0.6rem 1.15rem;
+    padding: 0.6rem 1.3rem;
 
     /* Shadow */
     box-shadow: 0px 1px 3px 1px #04060a60;
@@ -149,6 +149,10 @@ section.welcome {
     &:active {
       // transform: translateY(2px);
       transform: translate(-50%, -48%);
+    }
+
+    @media (max-width: 456px) {
+      padding: 0.6rem 2rem;
     }
   }
 

@@ -42,7 +42,7 @@ export default function WelcomeSection({ handleFocusOnSearchInput }: Props) {
         >
           Compare
           <Image
-            src={'/nba-logos/nba.svg'}
+            src={'/nba-logos/nba.png'}
             alt='nba logo'
             width={36}
             height={36}
