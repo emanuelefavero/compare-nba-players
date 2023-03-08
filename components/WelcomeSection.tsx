@@ -24,7 +24,6 @@ export default function WelcomeSection({
 
   return (
     <section className={styles.welcome}>
-      {/* TODO: Pass handleFocusOnSearchInput and handleShowMessage to Marquee */}
       <Marquee
         handleAddPlayerNameToSearchInput={handleAddPlayerNameToSearchInput}
       />

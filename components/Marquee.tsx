@@ -19,7 +19,6 @@ export default function Marquee({ handleAddPlayerNameToSearchInput }: Props) {
                 role='button'
                 key={index}
                 className={index % 2 === 0 ? styles.lighter : styles.darker}
-                // TODO: PUT ONCLICK HERE that will set the player name in the search input and focus on the input
                 onClick={() => handleAddPlayerNameToSearchInput(player)}
               >
                 {player} &nbsp;
@@ -41,7 +40,6 @@ export default function Marquee({ handleAddPlayerNameToSearchInput }: Props) {
                 role='button'
                 key={index}
                 className={index % 2 === 0 ? styles.lighter : styles.darker}
-                // TODO: PUT ONCLICK HERE that will set the player name in the search input and focus on the input
                 onClick={() => handleAddPlayerNameToSearchInput(player)}
               >
                 {player} &nbsp;

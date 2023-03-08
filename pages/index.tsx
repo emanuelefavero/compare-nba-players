@@ -29,7 +29,6 @@ export default function Home() {
     }
   }
 
-  // TODO: pass this function to Marquee component
   const handleAddPlayerNameToSearchInput = (name: string) => {
     if (searchInputRef.current) {
       searchInputRef.current.value = name
