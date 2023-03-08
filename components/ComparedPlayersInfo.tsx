@@ -139,7 +139,7 @@ export default function ComparedPlayersInfo({ player1, player2 }: Props) {
           {player2?.position && (
             <>
               <p className={styles.dot}>•</p>
-              <p>{player1Position}</p>
+              <p>{player2Position}</p>
             </>
           )}
         </div>
