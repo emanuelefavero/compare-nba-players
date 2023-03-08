@@ -32,7 +32,7 @@ export default function StatsChart({
   player2Team,
 }: Props) {
   const data = {
-    labels: [player1Team, player1Name],
+    labels: [player2Name, player1Name],
     datasets: [
       {
         label: statisticName,
