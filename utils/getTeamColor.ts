@@ -18,7 +18,7 @@ export default function getTeamColor(
     case 'Mavericks':
       return `rgba(0,83,188,${opacity})`
     case 'Nuggets':
-      return `rgba(13,34,64,${opacity})`
+      return `rgba(20,51,96,${opacity})`
     case 'Pistons':
       return `rgba(200,16,46,${opacity})`
     case 'Warriors':

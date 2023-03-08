@@ -7,6 +7,8 @@ import { IPlayer } from '@/types'
 
 interface Props {
   searchInputRef: React.RefObject<HTMLInputElement>
+  playerToSearch: string
+  setPlayerToSearch: (player: string) => void
   setFoundPlayers: (players: IPlayer[]) => void
   setShowFoundPlayers: (show: boolean) => void
   setShowSelectedPlayers: (show: boolean) => void
@@ -16,13 +18,15 @@ interface Props {
 
 export default function Header({
   searchInputRef,
+  playerToSearch,
+  setPlayerToSearch,
   setFoundPlayers,
   setShowFoundPlayers,
   setShowSelectedPlayers,
   setShowCompareButton,
   setShowWelcomeSection,
 }: Props) {
-  const [playerToSearch, setPlayerToSearch] = useState('')
+  // const [playerToSearch, setPlayerToSearch] = useState('')
 
   const handlePlayerSearch = async () => {
     const response = await fetch(

@@ -11,6 +11,7 @@ import { IPlayer, IPlayerStats } from '@/types'
 
 export default function Home() {
   const searchInputRef = useRef<HTMLInputElement>(null)
+  const [playerToSearch, setPlayerToSearch] = useState('')
   const [foundPlayers, setFoundPlayers] = useState<IPlayer[]>([])
   const [player1, setPlayer1] = useState<IPlayer | null>(null)
   const [player2, setPlayer2] = useState<IPlayer | null>(null)
@@ -25,6 +26,15 @@ export default function Home() {
   const handleFocusOnSearchInput = () => {
     if (searchInputRef.current) {
       searchInputRef.current.focus()
+    }
+  }
+
+  // TODO: pass this function to Marquee component
+  const handleAddPlayerNameToSearchInput = (name: string) => {
+    if (searchInputRef.current) {
+      searchInputRef.current.value = name
+      searchInputRef.current.focus()
+      setPlayerToSearch(name)
     }
   }
 
@@ -50,6 +60,8 @@ export default function Home() {
     <>
       <Header
         searchInputRef={searchInputRef}
+        playerToSearch={playerToSearch}
+        setPlayerToSearch={setPlayerToSearch}
         setFoundPlayers={setFoundPlayers}
         setShowFoundPlayers={setShowFoundPlayers}
         setShowSelectedPlayers={setShowSelectedPlayers}
@@ -59,7 +71,10 @@ export default function Home() {
 
       <main>
         {showWelcomeSection && (
-          <WelcomeSection handleFocusOnSearchInput={handleFocusOnSearchInput} />
+          <WelcomeSection
+            handleFocusOnSearchInput={handleFocusOnSearchInput}
+            handleAddPlayerNameToSearchInput={handleAddPlayerNameToSearchInput}
+          />
         )}
 
         {showFoundPlayers &&

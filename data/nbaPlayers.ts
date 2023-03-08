@@ -74,9 +74,9 @@ export const nbaPlayers = [
   'Taurean Prince',
   'Mikal Bridges',
   'Jusuf Nurkic',
-  'Marc Gasol',
   'Gary Trent Jr.',
   'Norman Powell',
   'Kyle Kuzma',
   'Anthony Edwards',
+  'Aaron Gordon',
 ]

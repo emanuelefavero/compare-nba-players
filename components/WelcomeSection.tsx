@@ -5,9 +5,13 @@ import Marquee from '@/components/Marquee'
 
 interface Props {
   handleFocusOnSearchInput: () => void
+  handleAddPlayerNameToSearchInput: (playerName: string) => void
 }
 
-export default function WelcomeSection({ handleFocusOnSearchInput }: Props) {
+export default function WelcomeSection({
+  handleFocusOnSearchInput,
+  handleAddPlayerNameToSearchInput,
+}: Props) {
   const [showMessage, setShowMessage] = useState(false)
   const [showWelcomeButton, setShowWelcomeButton] = useState(true)
 
@@ -20,7 +24,10 @@ export default function WelcomeSection({ handleFocusOnSearchInput }: Props) {
 
   return (
     <section className={styles.welcome}>
-      <Marquee />
+      {/* TODO: Pass handleFocusOnSearchInput and handleShowMessage to Marquee */}
+      <Marquee
+        handleAddPlayerNameToSearchInput={handleAddPlayerNameToSearchInput}
+      />
 
       {/* Message */}
       {showMessage && (

@@ -1,7 +1,11 @@
 import styles from '@/styles/Marquee.module.scss'
 import { nbaPlayers } from '@/data/nbaPlayers'
 
-export default function Marquee() {
+interface Props {
+  handleAddPlayerNameToSearchInput: (playerName: string) => void
+}
+
+export default function Marquee({ handleAddPlayerNameToSearchInput }: Props) {
   return (
     <>
       <div className={styles.marqueeContainer}>
@@ -15,6 +19,8 @@ export default function Marquee() {
                 role='button'
                 key={index}
                 className={index % 2 === 0 ? styles.lighter : styles.darker}
+                // TODO: PUT ONCLICK HERE that will set the player name in the search input and focus on the input
+                onClick={() => handleAddPlayerNameToSearchInput(player)}
               >
                 {player} &nbsp;
               </span>
@@ -35,6 +41,8 @@ export default function Marquee() {
                 role='button'
                 key={index}
                 className={index % 2 === 0 ? styles.lighter : styles.darker}
+                // TODO: PUT ONCLICK HERE that will set the player name in the search input and focus on the input
+                onClick={() => handleAddPlayerNameToSearchInput(player)}
               >
                 {player} &nbsp;
               </span>
