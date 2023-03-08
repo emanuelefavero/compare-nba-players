@@ -1,6 +1,7 @@
 import styles from '@/styles/WelcomeSection.module.scss'
 import { useState } from 'react'
 import Image from 'next/image'
+import Marquee from '@/components/Marquee'
 
 interface Props {
   handleFocusOnSearchInput: () => void
@@ -19,6 +20,8 @@ export default function WelcomeSection({ handleFocusOnSearchInput }: Props) {
 
   return (
     <section className={styles.welcome}>
+      <Marquee />
+
       {/* Message */}
       {showMessage && (
         <div className={styles.message}>

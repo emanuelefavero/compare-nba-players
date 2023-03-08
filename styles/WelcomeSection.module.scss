@@ -1,10 +1,11 @@
 section.welcome {
   position: relative;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6.5rem;
   height: calc((100vh - 70px) - 3rem);
+  overflow: hidden;
   // width: 100%;
 
   color: #fff;
@@ -15,9 +16,13 @@ section.welcome {
     top: 0;
     right: 10.2rem;
     color: var(--color-success);
+    font-weight: 600;
+    background-color: #0b0e1b;
+    box-shadow: 0px 0px 7px #000000;
+    border-radius: 0.6rem;
+    padding: 0.2rem 0.4rem;
     font-size: 1.15rem;
     transition: 0.5s;
-    // text-transform: uppercase;
 
     animation: 1s fadeIn ease-in-out;
 
