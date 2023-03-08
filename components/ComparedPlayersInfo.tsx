@@ -1,6 +1,7 @@
 import styles from '../styles/ComparedPlayersInfo.module.scss'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import getTeamColor from '@/utils/getTeamColor'
 import { IPlayer } from '../types'
 
 interface Props {
@@ -73,7 +74,22 @@ export default function ComparedPlayersInfo({ player1, player2 }: Props) {
   return (
     <section className={styles.comparedPlayersInfo}>
       {/* PLAYER 1 */}
-      <div className={`${styles.player} ${styles.player1}`}>
+      <div
+        className={`${styles.player} ${styles.player1}`}
+        // get different colors based on which team the player is on
+        style={{
+          background: `linear-gradient(to right, ${
+            player1?.team.name
+              ? getTeamColor(player1.team.name, 0.4) // second arg is opacity
+              : 'rgba(0, 0, 0, 0)'
+          }, rgba(0, 0, 0, 0))`,
+          borderLeft: `3px solid ${
+            player1?.team.name
+              ? getTeamColor(player1.team.name, 1)
+              : 'rgba(0, 0, 0, 0)'
+          }`,
+        }}
+      >
         {/* Image And Name */}
         <div className={styles.imageAndName}>
           {/* Image */}
@@ -112,7 +128,21 @@ export default function ComparedPlayersInfo({ player1, player2 }: Props) {
       </div>
 
       {/* PLAYER 2 */}
-      <div className={`${styles.player} ${styles.player2}`}>
+      <div
+        className={`${styles.player} ${styles.player2}`} // get different colors based on which team the player is on
+        style={{
+          background: `linear-gradient(to right, rgba(0, 0, 0, 0), ${
+            player2?.team.name
+              ? getTeamColor(player2.team.name, 0.4) // second arg is opacity
+              : 'rgba(0, 0, 0, 0)'
+          })`,
+          borderRight: `3px solid ${
+            player2?.team.name
+              ? getTeamColor(player2.team.name, 1)
+              : 'rgba(0, 0, 0, 0)'
+          }`,
+        }}
+      >
         {/* Image And Name */}
         <div className={`${styles.imageAndName} ${styles.imageAndName2}`}>
           {/* Image */}
