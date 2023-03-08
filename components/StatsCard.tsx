@@ -61,6 +61,7 @@ export default function StatsCard({
           style={{
             color: player1StatColor,
           }}
+          title={player1Name}
         >
           {player1Statistic} {/* 👈 */}
         </div>
@@ -84,9 +85,7 @@ export default function StatsCard({
           style={{
             color: player2StatColor,
           }}
-          // style={{
-          //   color: player1Statistic < player2Statistic ? '#05d555' : '#ea114f',
-          // }}
+          title={player2Name}
         >
           {player2Statistic} {/* 👈 */}
         </div>
