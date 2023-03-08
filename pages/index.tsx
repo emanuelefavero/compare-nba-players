@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import Stats from '@/components/Stats'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import WelcomeSection from '@/components/WelcomeSection'
 import FoundPlayer from '@/components/FoundPlayer'
 import SelectedPlayers from '@/components/SelectedPlayers'
@@ -121,6 +122,8 @@ export default function Home() {
           />
         )}
       </main>
+
+      <Footer />
     </>
   )
 }

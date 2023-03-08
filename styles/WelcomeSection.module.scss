@@ -4,7 +4,7 @@ section.welcome {
   flex-direction: column;
   justify-content: center;
   gap: 6.5rem;
-  height: calc((100vh - 70px) - 3rem);
+  height: calc((100vh - 70px - 100px - 3rem));
   overflow: hidden;
   // width: 100%;
 
