@@ -162,7 +162,13 @@ section.welcome {
     }
 
     @media (max-width: 456px) {
-      padding: 0.6rem 2rem;
+      flex-direction: column;
+      padding: 2rem 2rem;
+      // width: 90%;
+
+      & > * {
+        margin-top: 0.2rem;
+      }
     }
 
     @media (max-width: 270px) {
