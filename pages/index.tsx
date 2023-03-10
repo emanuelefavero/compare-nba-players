@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import WelcomeSection from '@/components/WelcomeSection'
 import FoundPlayer from '@/components/FoundPlayer'
+import NoPlayerFound from '@/components/NoPlayerFound'
 import SelectedPlayers from '@/components/SelectedPlayers'
 import CompareButton from '@/components/CompareButton'
 import ComparedPlayersInfo from '@/components/ComparedPlayersInfo'
@@ -87,9 +88,8 @@ export default function Home() {
 
           {showFoundPlayers && loadingPlayers ? (
             <Loader />
-          ) : (
-            // TODO: Change the following code to a ternary operator to handle no user found (if foundPlayers has zero items)
-            foundPlayers.length > 0 &&
+          ) : // TODO: Change the following code to a ternary operator to handle no user found (if foundPlayers has zero items)
+          foundPlayers.length > 0 ? (
             foundPlayers.map((player: IPlayer) => (
               <div key={player.id}>
                 {/* // ? If player.position is found, it means the player is active. Show only active players */}
@@ -103,6 +103,8 @@ export default function Home() {
                 )}
               </div>
             ))
+          ) : (
+            <NoPlayerFound />
           )}
 
           {showSelectedPlayers && (
