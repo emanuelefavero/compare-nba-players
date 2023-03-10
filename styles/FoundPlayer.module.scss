@@ -118,6 +118,50 @@
       user-select: none;
     }
   }
+
+  @media (max-width: 330px) {
+    flex-direction: column;
+    gap: 0;
+
+    section.left {
+      border-right: none;
+
+      h2 {
+        @media (max-width: 150px) {
+          word-wrap: break-word;
+        }
+      }
+
+      .team {
+        @media (max-width: 150px) {
+          flex-direction: column;
+          align-items: flex-start;
+
+          img {
+            margin-top: 0.5rem;
+          }
+
+          p {
+            margin-top: 0.5rem;
+          }
+        }
+      }
+    }
+
+    section.right {
+      margin-top: 1rem;
+
+      @media (max-width: 150px) {
+        .playerHeight {
+          display: none;
+        }
+
+        .playerWeight {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 @keyframes bounce {

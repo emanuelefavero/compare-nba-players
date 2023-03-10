@@ -163,6 +163,17 @@ section.welcome {
     @media (max-width: 456px) {
       padding: 0.6rem 2rem;
     }
+
+    @media (max-width: 270px) {
+      flex-wrap: wrap;
+      padding: 2rem 1rem;
+      font-size: 0.875rem;
+
+      & img {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+    }
   }
 
   @media (max-width: 456px) {
