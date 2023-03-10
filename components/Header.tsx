@@ -1,7 +1,10 @@
-import { FormEvent, useState } from 'react'
+import { FormEvent } from 'react'
 import Image from 'next/image'
 import Router from 'next/router'
 import styles from '@/styles/Header.module.scss'
+
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import { IPlayer } from '@/types'
 
@@ -42,7 +45,17 @@ export default function Header({
 
       setPlayerToSearch('') // Clear input field
     } else {
-      alert('Please enter a valid player name')
+      toast.warn('Invalid player name!', {
+        toastId: 'invalidPlayerName',
+        position: 'top-left',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      })
     }
   }
 
@@ -87,6 +100,8 @@ export default function Header({
           <button type='submit'>Search</button>
         </form>
       </header>
+
+      <ToastContainer />
     </div>
   )
 }

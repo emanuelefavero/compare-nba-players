@@ -82,6 +82,8 @@ export default function Home() {
           )}
 
           {showFoundPlayers &&
+            // TODO: Change the following code to a ternary operator to handle no user found (if foundPlayers has zero items)
+            foundPlayers.length > 0 &&
             foundPlayers.map((player: IPlayer) => (
               <div key={player.id}>
                 {/* // ? If player.position is found, it means the player is active. Show only active players */}
