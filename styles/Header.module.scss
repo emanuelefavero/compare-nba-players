@@ -67,7 +67,6 @@
       button {
         position: relative;
         top: -0.15rem;
-        // margin-left: 1rem;
         user-select: none;
       }
     }
@@ -95,6 +94,13 @@
     .logoContainer {
       width: 100%;
       margin-bottom: 1rem;
+
+      button.logo {
+        @media (max-width: 90px) {
+          min-width: 40px;
+          min-height: 40px;
+        }
+      }
     }
 
     form {
@@ -104,12 +110,19 @@
       flex-direction: column;
 
       input {
+        width: 100% !important;
         min-width: 100%;
         margin-bottom: 1rem;
       }
 
       button {
         min-width: 100%;
+
+        @media (max-width: 145px) {
+          word-wrap: break-word;
+          padding-left: 0.1rem;
+          padding-right: 0.1rem;
+        }
       }
     }
   }
