@@ -41,6 +41,7 @@ export default function Header({
       )
       const data = await response.json()
       setFoundPlayers(data.data)
+      setPlayerToSearch('') // Clear search input
 
       setShowWelcomeSection(false) // Hide welcome section
       setShowFoundPlayers(true) // Show found players
@@ -48,8 +49,6 @@ export default function Header({
       setShowCompareButton(true) // Show compare button
 
       setLoadingPlayers(false) // Hide loading spinner
-
-      setPlayerToSearch('') // Clear input field
     } else {
       toast.warn('Invalid player name!', {
         toastId: 'invalidPlayerName',
