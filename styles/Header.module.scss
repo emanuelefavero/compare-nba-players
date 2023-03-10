@@ -4,13 +4,13 @@
   justify-content: center;
   align-items: center;
   background: #00000031;
+  border-bottom: 1px solid rgba(155, 180, 255, 0.06);
   color: #fff;
 
   header.header {
     position: relative;
 
-    padding: 1rem;
-    margin-bottom: 0.2rem;
+    padding: 1rem 1rem 0.8rem;
 
     width: 100%;
     max-width: var(--max-width); // max width
