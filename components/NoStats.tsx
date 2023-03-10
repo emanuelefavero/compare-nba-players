@@ -26,24 +26,35 @@ export default function NoStats({
         // If player1Stats is null and player2Stats is null, show this message
         !player1Stats && !player2Stats && (
           <h3 className={styles.playerName}>
-            {player1?.first_name} {player1?.last_name} & {player2?.first_name}{' '}
-            {player2?.last_name}
+            <span>
+              {player1?.first_name} {player1?.last_name}
+            </span>{' '}
+            &{' '}
+            <span>
+              {player2?.first_name} {player2?.last_name}
+            </span>
           </h3>
         )
       }
+
       {
         // If player1Stats is null and player2Stats is not null, show this message
         !player1Stats && player2Stats && (
           <h3 className={styles.playerName}>
-            {player1?.first_name} {player1?.last_name}
+            <span>
+              {player1?.first_name} {player1?.last_name}
+            </span>
           </h3>
         )
       }
+
       {
         // If player1Stats is not null and player2Stats is null, show this message
         player1Stats && !player2Stats && (
           <h3 className={styles.playerName}>
-            {player2?.first_name} {player2?.last_name}
+            <span>
+              {player2?.first_name} {player2?.last_name}
+            </span>
           </h3>
         )
       }

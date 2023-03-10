@@ -1,6 +1,6 @@
 /* DEFAULT STYLING */
 :root {
-  --color-background: rgb(15, 22, 34);
+  --color-background: #0f1622;
   --color-primary: rgb(205, 112, 0);
   --color-primary-text-lighter: rgb(218, 122, 5);
   --color-primary-darker: rgb(155, 85, 0);
@@ -8,6 +8,7 @@
   --color-primary-hover: rgb(199, 106, 0);
   --color-primary-text-hover: var(--color-primary);
   --color-success: #25ca6a;
+  --color-error: #ff1a4f;
   // --color-selection: rgba(92, 119, 252, 0.25);
   --color-selection: rgba(255, 151, 25, 0.201);
   --color-p: #bbc2d8;

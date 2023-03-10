@@ -52,6 +52,10 @@
     color: var(--color-p);
     font-weight: 700;
     margin-bottom: 2rem;
+
+    span {
+      color: var(--color-error);
+    }
   }
 
   p {
