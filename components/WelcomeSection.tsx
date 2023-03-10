@@ -46,14 +46,14 @@ export default function WelcomeSection({
           role='button'
           className={styles.buttonRotatingGradient}
         >
-          Compare
+          Compare {new Date().getFullYear()}
           <Image
             src={'/nba-logos/nba.png'}
             alt='nba logo'
             width={36}
             height={36}
           />
-          Players
+          Players 1v1
         </div>
       )}
     </section>
