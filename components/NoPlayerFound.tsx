@@ -9,7 +9,9 @@ export default function NoPlayerFound({ handleFocusOnSearchInput }: Props) {
     <div className={styles.noPlayerFound}>
       <div className={styles.FourZeroFour}>404</div>
       <h2>No player found</h2>
-      <p>Please only search for active NBA players</p>
+      <p>
+        Please only search for {new Date().getFullYear()} active NBA players
+      </p>
       <div
         onClick={handleFocusOnSearchInput}
         role='button'

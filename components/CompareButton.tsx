@@ -10,6 +10,7 @@ interface Props {
   setShowFoundPlayers: (show: boolean) => void
   setShowSelectedPlayers: (show: boolean) => void
   setShowCompareButton: (show: boolean) => void
+  setShowStats: (show: boolean) => void
 }
 
 export default function CompareButton({
@@ -21,6 +22,7 @@ export default function CompareButton({
   setShowFoundPlayers,
   setShowSelectedPlayers,
   setShowCompareButton,
+  setShowStats,
 }: Props) {
   const handleCompare = async () => {
     setLoadingStats(true) // Show loader
@@ -40,6 +42,8 @@ export default function CompareButton({
     setShowFoundPlayers(false) // Hide found players
     setShowSelectedPlayers(false) // Hide selected players
     setShowCompareButton(false) // Hide compare button
+
+    setShowStats(true) // Show stats
 
     setLoadingStats(false) // Hide loader
   }

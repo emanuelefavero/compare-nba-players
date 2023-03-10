@@ -1,0 +1,97 @@
+.noStats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #fff;
+  font-size: 1.25rem;
+  text-align: center;
+  user-select: none;
+
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(155, 180, 255, 0.1);
+
+  margin-bottom: 1rem;
+
+  // ? add margin bottom to all children except first
+  & > *:not(:first-child) {
+    margin-bottom: 0.7rem;
+  }
+
+  .FourZeroFour {
+    font-size: 6rem;
+    font-weight: 700;
+
+    color: rgb(17, 25, 38);
+    text-shadow: -1px -1px 0 rgba(188, 213, 255, 0.35),
+      1px -1px 0 rgba(188, 213, 255, 0.2), -1px 1px 0 rgba(188, 213, 255, 0.3),
+      1px 1px 0 rgba(188, 213, 255, 0.1);
+
+    @media (max-width: 225px) {
+      font-size: 3rem;
+    }
+
+    @media (max-width: 125px) {
+      font-size: 0.875rem;
+    }
+  }
+
+  h2 {
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @media (max-width: 125px) {
+      font-size: 0.875rem;
+    }
+  }
+
+  h3.playerName {
+    text-transform: none;
+    font-size: 1.5rem;
+    color: var(--color-p);
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    @media (max-width: 125px) {
+      font-size: 0.875rem;
+    }
+  }
+
+  .searchAgainButton {
+    // margin-top: 0.7rem;
+
+    position: relative;
+    color: var(--color-primary);
+    cursor: pointer;
+
+    .icon {
+      margin-left: 0.15rem;
+      position: relative;
+      top: 0.13rem;
+      animation: jump 1s ease-in infinite;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:active {
+      top: 0.05rem;
+    }
+  }
+}
+
+@keyframes jump {
+  0% {
+    top: 0rem;
+  }
+  50% {
+    top: 0.2rem;
+  }
+  100% {
+    top: 0rem;
+  }
+}

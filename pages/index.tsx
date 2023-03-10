@@ -10,6 +10,7 @@ import SelectedPlayers from '@/components/SelectedPlayers'
 import CompareButton from '@/components/CompareButton'
 import ComparedPlayersInfo from '@/components/ComparedPlayersInfo'
 import Stats from '@/components/Stats'
+import NoStats from '@/components/NoStats'
 
 import { IPlayer, IPlayerStats } from '@/types'
 
@@ -28,6 +29,7 @@ export default function Home() {
   const [showSelectedPlayers, setShowSelectedPlayers] = useState(false)
   const [showCompareButton, setShowCompareButton] = useState(false)
   const [showWelcomeSection, setShowWelcomeSection] = useState(true)
+  const [showStats, setShowStats] = useState(false)
 
   const handleFocusOnSearchInput = () => {
     if (searchInputRef.current) {
@@ -44,6 +46,8 @@ export default function Home() {
   }
 
   const handleAddPlayerForComparison = (player: IPlayer) => {
+    setShowStats(false)
+
     if (!player1) {
       setPlayer1(player)
       setLastAddedPlayer(player)
@@ -126,6 +130,7 @@ export default function Home() {
               setShowFoundPlayers={setShowFoundPlayers}
               setShowSelectedPlayers={setShowSelectedPlayers}
               setShowCompareButton={setShowCompareButton}
+              setShowStats={setShowStats}
             />
           )}
 
@@ -136,17 +141,24 @@ export default function Home() {
           {/* Stats */}
           {loadingStats ? (
             <Loader />
-          ) : (
-            player1Stats &&
-            player2Stats && (
+          ) : showStats ? (
+            player1Stats && player2Stats ? (
               <Stats
                 player1Stats={player1Stats}
                 player2Stats={player2Stats}
                 player1={player1}
                 player2={player2}
               />
+            ) : (
+              <NoStats
+                player1={player1}
+                player2={player2}
+                player1Stats={player1Stats}
+                player2Stats={player2Stats}
+                handleFocusOnSearchInput={handleFocusOnSearchInput}
+              />
             )
-          )}
+          ) : null}
         </main>
       </div>
 
