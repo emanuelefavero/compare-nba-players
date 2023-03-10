@@ -12,7 +12,10 @@
   --color-selection: rgba(255, 151, 25, 0.201);
   --color-p: #bbc2d8;
 
-  /* Font rendering, smoothing, adjusting */
+  // Max width
+  --max-width: 1512px;
+
+  // Font rendering, smoothing, adjusting
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

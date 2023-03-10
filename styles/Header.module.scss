@@ -13,7 +13,7 @@
     margin-bottom: 0.2rem;
 
     width: 100%;
-    max-width: 1512px; // max width
+    max-width: var(--max-width); // max width
     display: flex;
     justify-content: space-between;
     align-items: center;
