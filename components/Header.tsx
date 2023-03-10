@@ -47,29 +47,33 @@ export default function Header({
   }
 
   return (
-    <header className={styles.header}>
-      <button className={styles.logo} onClick={() => Router.reload()}>
-        <Image src='/logo.png' alt='logo' width={40} height={40} />
-      </button>
+    <div className={styles.headerContainer}>
+      <header className={styles.header}>
+        <div className={styles.logoContainer}>
+          <button className={styles.logo} onClick={() => Router.reload()}>
+            <Image src='/logo.png' alt='logo' width={40} height={40} />
+          </button>
+        </div>
 
-      <form
-        onSubmit={(e: FormEvent<HTMLFormElement>) => {
-          e.preventDefault()
-          handlePlayerSearch()
-          setShowWelcomeSection(false) // Hide welcome section
-        }}
-      >
-        <input
-          ref={searchInputRef}
-          type='text'
-          placeholder='Search player...'
-          value={playerToSearch}
-          onChange={(e) => setPlayerToSearch(e.target.value)}
-          onKeyDown={handleKeyDown}
-        />
+        <form
+          onSubmit={(e: FormEvent<HTMLFormElement>) => {
+            e.preventDefault()
+            handlePlayerSearch()
+            setShowWelcomeSection(false) // Hide welcome section
+          }}
+        >
+          <input
+            ref={searchInputRef}
+            type='text'
+            placeholder='Search player...'
+            value={playerToSearch}
+            onChange={(e) => setPlayerToSearch(e.target.value)}
+            onKeyDown={handleKeyDown}
+          />
 
-        <button type='submit'>Search</button>
-      </form>
-    </header>
+          <button type='submit'>Search</button>
+        </form>
+      </header>
+    </div>
   )
 }
