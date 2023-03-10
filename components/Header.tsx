@@ -29,21 +29,33 @@ export default function Header({
   // const [playerToSearch, setPlayerToSearch] = useState('')
 
   const handlePlayerSearch = async () => {
-    const response = await fetch(
-      `https://www.balldontlie.io/api/v1/players?search=${playerToSearch}`
-    )
-    const data = await response.json()
-    setFoundPlayers(data.data)
+    if (isValidPlayer(playerToSearch)) {
+      const response = await fetch(
+        `https://www.balldontlie.io/api/v1/players?search=${playerToSearch}`
+      )
+      const data = await response.json()
+      setFoundPlayers(data.data)
 
-    setShowFoundPlayers(true) // Show found players
-    setShowSelectedPlayers(true) // Hide selected players
-    setShowCompareButton(true) // Hide compare button
+      setShowFoundPlayers(true) // Show found players
+      setShowSelectedPlayers(true) // Hide selected players
+      setShowCompareButton(true) // Hide compare button
+
+      setPlayerToSearch('') // Clear input field
+    } else {
+      alert('Please enter a valid player name')
+    }
   }
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       handlePlayerSearch()
     }
+  }
+
+  const isValidPlayer = (player: string) => {
+    //  check if the player name is valid (add also single quotes, spaces, hyphens, and apostrophes)
+    const regex = /^[a-zA-Z0-9-' ]+$/
+    return regex.test(player)
   }
 
   return (
@@ -69,6 +81,7 @@ export default function Header({
             value={playerToSearch}
             onChange={(e) => setPlayerToSearch(e.target.value)}
             onKeyDown={handleKeyDown}
+            required
           />
 
           <button type='submit'>Search</button>
