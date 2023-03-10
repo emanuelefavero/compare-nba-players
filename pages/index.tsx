@@ -104,7 +104,7 @@ export default function Home() {
               </div>
             ))
           ) : (
-            <NoPlayerFound />
+            showFoundPlayers && !loadingPlayers && <NoPlayerFound />
           )}
 
           {showSelectedPlayers && (
