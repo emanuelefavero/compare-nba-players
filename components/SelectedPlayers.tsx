@@ -23,7 +23,7 @@ export default function SelectedPlayers({ player1, player2 }: Props) {
 
         {player2 && (
           <div>
-            <p>
+            <p className={styles.secondPlayer}>
               {player2.first_name} {player2.last_name}
             </p>
           </div>

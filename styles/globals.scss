@@ -67,6 +67,10 @@ footer {
 
 main {
   padding: 1rem;
+
+  @media (max-width: 190px) {
+    padding: 0.1rem;
+  }
 }
 
 img,

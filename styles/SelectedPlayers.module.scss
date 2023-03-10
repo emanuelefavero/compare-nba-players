@@ -1,6 +1,6 @@
 section.selectedPlayers {
   display: flex;
-  flex-direction: row;
+  // flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -13,7 +13,7 @@ section.selectedPlayers {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-right: 1rem;
+    // margin-right: 1rem;
 
     // style all children except the last one
     &:not(:last-child) {
@@ -21,10 +21,21 @@ section.selectedPlayers {
     }
 
     &.vs {
-      margin: 0 1rem;
+      // margin: 0 1rem;
       // font-size: 1.5rem;
       font-weight: 600;
       color: var(--color-success);
+    }
+  }
+
+  @media (max-width: 456px) {
+    flex-direction: column;
+
+    & > div {
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
     }
   }
 }
