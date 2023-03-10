@@ -14,10 +14,14 @@
 
   margin-bottom: 1rem;
 
+  // ? add margin bottom to all children except first
+  & > *:not(:first-child) {
+    margin-bottom: 0.7rem;
+  }
+
   .FourZeroFour {
     font-size: 6rem;
     font-weight: 700;
-    margin-bottom: 0.1rem;
 
     color: rgb(17, 25, 38);
     text-shadow: -1px -1px 0 rgba(188, 213, 255, 0.35),
@@ -36,7 +40,7 @@
   h2 {
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 0.7rem;
+    // margin-bottom: 0.7rem;
 
     @media (max-width: 125px) {
       font-size: 0.875rem;
@@ -49,11 +53,27 @@
     }
   }
 
-  .icon {
-    margin-left: 0.15rem;
+  .searchAgainButton {
+    // margin-top: 0.7rem;
+
     position: relative;
-    top: 0.13rem;
-    animation: jump 1s ease-in infinite;
+    color: var(--color-primary);
+    cursor: pointer;
+
+    .icon {
+      margin-left: 0.15rem;
+      position: relative;
+      top: 0.13rem;
+      animation: jump 1s ease-in infinite;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:active {
+      top: 0.05rem;
+    }
   }
 }
 

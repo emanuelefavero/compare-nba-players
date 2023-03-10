@@ -104,7 +104,12 @@ export default function Home() {
               </div>
             ))
           ) : (
-            showFoundPlayers && !loadingPlayers && <NoPlayerFound />
+            showFoundPlayers &&
+            !loadingPlayers && (
+              <NoPlayerFound
+                handleFocusOnSearchInput={handleFocusOnSearchInput}
+              />
+            )
           )}
 
           {showSelectedPlayers && (
