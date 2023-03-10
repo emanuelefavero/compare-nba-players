@@ -2,6 +2,7 @@ import styles from '@/styles/CompareButton.module.scss'
 import { IPlayer, IPlayerStats } from '@/types'
 
 interface Props {
+  setLoadingStats: (loading: boolean) => void
   player1: IPlayer | null
   player2: IPlayer | null
   setPlayer1Stats: (playerStats: IPlayerStats) => void
@@ -12,6 +13,7 @@ interface Props {
 }
 
 export default function CompareButton({
+  setLoadingStats,
   player1,
   player2,
   setPlayer1Stats,
@@ -21,6 +23,8 @@ export default function CompareButton({
   setShowCompareButton,
 }: Props) {
   const handleCompare = async () => {
+    setLoadingStats(true) // Show loader
+
     const response1 = await fetch(
       `https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${player1?.id}`
     )
@@ -36,6 +40,8 @@ export default function CompareButton({
     setShowFoundPlayers(false) // Hide found players
     setShowSelectedPlayers(false) // Hide selected players
     setShowCompareButton(false) // Hide compare button
+
+    setLoadingStats(false) // Hide loader
   }
 
   if (player1 && player2) {

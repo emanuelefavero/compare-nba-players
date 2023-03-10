@@ -14,6 +14,7 @@ import { IPlayer, IPlayerStats } from '@/types'
 
 export default function Home() {
   const [loadingPlayers, setLoadingPlayers] = useState(false)
+  const [loadingStats, setLoadingStats] = useState(false)
   const searchInputRef = useRef<HTMLInputElement>(null)
   const [playerToSearch, setPlayerToSearch] = useState('')
   const [foundPlayers, setFoundPlayers] = useState<IPlayer[]>([])
@@ -110,6 +111,7 @@ export default function Home() {
 
           {showCompareButton && (
             <CompareButton
+              setLoadingStats={setLoadingStats}
               player1={player1}
               player2={player2}
               setPlayer1Stats={setPlayer1Stats}
@@ -125,13 +127,18 @@ export default function Home() {
           )}
 
           {/* Stats */}
-          {player1Stats && player2Stats && (
-            <Stats
-              player1Stats={player1Stats}
-              player2Stats={player2Stats}
-              player1={player1}
-              player2={player2}
-            />
+          {loadingStats ? (
+            <Loader />
+          ) : (
+            player1Stats &&
+            player2Stats && (
+              <Stats
+                player1Stats={player1Stats}
+                player2Stats={player2Stats}
+                player1={player1}
+                player2={player2}
+              />
+            )
           )}
         </main>
       </div>
