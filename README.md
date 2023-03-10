@@ -2,6 +2,10 @@
 
 This is a nextjs app that allows you to compare NBA players. It uses the [balldontlie API](https://www.balldontlie.io/home.html#players) to get the data
 
+## Website
+
+- [https://compare-nba-players.vercel.app](https://compare-nba-players.vercel.app)
+
 ## Getting Started
 
 - clone the repo and `cd` into it
