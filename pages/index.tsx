@@ -1,6 +1,6 @@
 import styles from '@/styles/Home.module.scss'
 import { useState, useRef } from 'react'
-import Stats from '@/components/Stats'
+import Loader from '@/components/Loader'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import WelcomeSection from '@/components/WelcomeSection'
@@ -8,10 +8,12 @@ import FoundPlayer from '@/components/FoundPlayer'
 import SelectedPlayers from '@/components/SelectedPlayers'
 import CompareButton from '@/components/CompareButton'
 import ComparedPlayersInfo from '@/components/ComparedPlayersInfo'
+import Stats from '@/components/Stats'
 
 import { IPlayer, IPlayerStats } from '@/types'
 
 export default function Home() {
+  const [loadingPlayers, setLoadingPlayers] = useState(false)
   const searchInputRef = useRef<HTMLInputElement>(null)
   const [playerToSearch, setPlayerToSearch] = useState('')
   const [foundPlayers, setFoundPlayers] = useState<IPlayer[]>([])
@@ -60,6 +62,7 @@ export default function Home() {
   return (
     <>
       <Header
+        setLoadingPlayers={setLoadingPlayers}
         searchInputRef={searchInputRef}
         playerToSearch={playerToSearch}
         setPlayerToSearch={setPlayerToSearch}
@@ -81,7 +84,9 @@ export default function Home() {
             />
           )}
 
-          {showFoundPlayers &&
+          {showFoundPlayers && loadingPlayers ? (
+            <Loader />
+          ) : (
             // TODO: Change the following code to a ternary operator to handle no user found (if foundPlayers has zero items)
             foundPlayers.length > 0 &&
             foundPlayers.map((player: IPlayer) => (
@@ -96,7 +101,8 @@ export default function Home() {
                   />
                 )}
               </div>
-            ))}
+            ))
+          )}
 
           {showSelectedPlayers && (
             <SelectedPlayers player1={player1} player2={player2} />

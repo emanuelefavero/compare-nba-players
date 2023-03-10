@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { IPlayer } from '@/types'
 
 interface Props {
+  setLoadingPlayers: (loading: boolean) => void
   searchInputRef: React.RefObject<HTMLInputElement>
   playerToSearch: string
   setPlayerToSearch: (player: string) => void
@@ -20,6 +21,7 @@ interface Props {
 }
 
 export default function Header({
+  setLoadingPlayers,
   searchInputRef,
   playerToSearch,
   setPlayerToSearch,
@@ -33,15 +35,19 @@ export default function Header({
 
   const handlePlayerSearch = async () => {
     if (isValidPlayer(playerToSearch)) {
+      setLoadingPlayers(true) // Show loading spinner
       const response = await fetch(
         `https://www.balldontlie.io/api/v1/players?search=${playerToSearch}`
       )
       const data = await response.json()
       setFoundPlayers(data.data)
 
+      setShowWelcomeSection(false) // Hide welcome section
       setShowFoundPlayers(true) // Show found players
-      setShowSelectedPlayers(true) // Hide selected players
-      setShowCompareButton(true) // Hide compare button
+      setShowSelectedPlayers(true) // Show selected players
+      setShowCompareButton(true) // Show compare button
+
+      setLoadingPlayers(false) // Hide loading spinner
 
       setPlayerToSearch('') // Clear input field
     } else {
@@ -84,7 +90,6 @@ export default function Header({
           onSubmit={(e: FormEvent<HTMLFormElement>) => {
             e.preventDefault()
             handlePlayerSearch()
-            setShowWelcomeSection(false) // Hide welcome section
           }}
         >
           <input
