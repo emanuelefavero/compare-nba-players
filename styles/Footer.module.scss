@@ -15,8 +15,19 @@
     align-items: center;
     background-color: var(--color-background);
 
+    @media (max-width: 175px) {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
     & > *:not(:last-child) {
       margin-right: 0.3rem;
+    }
+
+    a {
+      @media (max-width: 100px) {
+        font-size: 0.8rem;
+      }
     }
 
     .copyright,
