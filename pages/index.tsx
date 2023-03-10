@@ -1,3 +1,4 @@
+import styles from '@/styles/Home.module.scss'
 import { useState, useRef } from 'react'
 import Stats from '@/components/Stats'
 import Header from '@/components/Header'
@@ -69,59 +70,63 @@ export default function Home() {
         setShowWelcomeSection={setShowWelcomeSection}
       />
 
-      <main>
-        {showWelcomeSection && (
-          <WelcomeSection
-            handleFocusOnSearchInput={handleFocusOnSearchInput}
-            handleAddPlayerNameToSearchInput={handleAddPlayerNameToSearchInput}
-          />
-        )}
+      <div className={styles.mainContainer}>
+        <main>
+          {showWelcomeSection && (
+            <WelcomeSection
+              handleFocusOnSearchInput={handleFocusOnSearchInput}
+              handleAddPlayerNameToSearchInput={
+                handleAddPlayerNameToSearchInput
+              }
+            />
+          )}
 
-        {showFoundPlayers &&
-          foundPlayers.map((player: IPlayer) => (
-            <div key={player.id}>
-              {/* // ? If player.position is found, it means the player is active. Show only active players */}
-              {player.position && (
-                <FoundPlayer
-                  player={player}
-                  player1={player1}
-                  player2={player2}
-                  handleAddPlayerForComparison={handleAddPlayerForComparison}
-                />
-              )}
-            </div>
-          ))}
+          {showFoundPlayers &&
+            foundPlayers.map((player: IPlayer) => (
+              <div key={player.id}>
+                {/* // ? If player.position is found, it means the player is active. Show only active players */}
+                {player.position && (
+                  <FoundPlayer
+                    player={player}
+                    player1={player1}
+                    player2={player2}
+                    handleAddPlayerForComparison={handleAddPlayerForComparison}
+                  />
+                )}
+              </div>
+            ))}
 
-        {showSelectedPlayers && (
-          <SelectedPlayers player1={player1} player2={player2} />
-        )}
+          {showSelectedPlayers && (
+            <SelectedPlayers player1={player1} player2={player2} />
+          )}
 
-        {showCompareButton && (
-          <CompareButton
-            player1={player1}
-            player2={player2}
-            setPlayer1Stats={setPlayer1Stats}
-            setPlayer2Stats={setPlayer2Stats}
-            setShowFoundPlayers={setShowFoundPlayers}
-            setShowSelectedPlayers={setShowSelectedPlayers}
-            setShowCompareButton={setShowCompareButton}
-          />
-        )}
+          {showCompareButton && (
+            <CompareButton
+              player1={player1}
+              player2={player2}
+              setPlayer1Stats={setPlayer1Stats}
+              setPlayer2Stats={setPlayer2Stats}
+              setShowFoundPlayers={setShowFoundPlayers}
+              setShowSelectedPlayers={setShowSelectedPlayers}
+              setShowCompareButton={setShowCompareButton}
+            />
+          )}
 
-        {player1Stats && player2Stats && (
-          <ComparedPlayersInfo player1={player1} player2={player2} />
-        )}
+          {player1Stats && player2Stats && (
+            <ComparedPlayersInfo player1={player1} player2={player2} />
+          )}
 
-        {/* Stats */}
-        {player1Stats && player2Stats && (
-          <Stats
-            player1Stats={player1Stats}
-            player2Stats={player2Stats}
-            player1={player1}
-            player2={player2}
-          />
-        )}
-      </main>
+          {/* Stats */}
+          {player1Stats && player2Stats && (
+            <Stats
+              player1Stats={player1Stats}
+              player2Stats={player2Stats}
+              player1={player1}
+              player2={player2}
+            />
+          )}
+        </main>
+      </div>
 
       <Footer />
     </>

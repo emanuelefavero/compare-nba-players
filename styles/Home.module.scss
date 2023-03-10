@@ -1,0 +1,16 @@
+.mainContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  main {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    // min-height: 100vh;
+    // padding: 0 0.5rem;
+    width: 100%;
+    max-width: 1512px;
+  }
+}
