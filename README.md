@@ -6,6 +6,10 @@ This is a nextjs app that allows you to compare NBA players. It uses the [balldo
 
 - [https://compare-nba-players.vercel.app](https://compare-nba-players.vercel.app)
 
+#### Screenshot
+
+![screenshot](./screenshot.jpg 'screenshot')
+
 ## Getting Started
 
 - clone the repo and `cd` into it
