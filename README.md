@@ -1,6 +1,6 @@
 # Compare NBA Players
 
-This is a nextjs app that allows you to compare NBA players. It uses the [balldontlie API](https://www.balldontlie.io/home.html#players) to get the data
+This is a nextjs app that allows you to compare NBA players. It uses the [balldontlie API](https://www.balldontlie.io/home.html#players) to get the data as well as Chart.js to display the data.
 
 ## Website
 
