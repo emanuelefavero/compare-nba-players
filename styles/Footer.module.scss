@@ -13,6 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: var(--color-background);
 
     @media (max-width: 175px) {
@@ -20,21 +21,35 @@
       gap: 0.5rem;
     }
 
-    & > *:not(:last-child) {
-      margin-right: 0.3rem;
-    }
+    .authorCopyrightYear {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0.4rem;
+      & > *:not(:last-child) {
+        margin-right: 0.3rem;
+      }
 
-    a {
-      @media (max-width: 100px) {
+      a {
+        @media (max-width: 100px) {
+          font-size: 0.8rem;
+        }
+      }
+
+      .copyright,
+      .year {
+        user-select: none;
         font-size: 0.8rem;
+        color: #7280a7;
       }
     }
 
-    .copyright,
-    .year {
-      user-select: none;
-      font-size: 0.8rem;
-      color: #7280a7;
+    .about {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 1rem;
     }
   }
 }
