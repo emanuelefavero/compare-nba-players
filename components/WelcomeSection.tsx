@@ -5,23 +5,19 @@ import Marquee from '@/components/Marquee'
 import SearchMessage from '@/components/SearchMessage'
 
 interface Props {
+  showMessage: boolean
+  handleShowMessage: () => void
   handleFocusOnSearchInput: () => void
   handleAddPlayerNameToSearchInput: (playerName: string) => void
 }
 
 export default function WelcomeSection({
+  showMessage,
+  handleShowMessage,
   handleFocusOnSearchInput,
   handleAddPlayerNameToSearchInput,
 }: Props) {
-  const [showMessage, setShowMessage] = useState(false)
   const [showWelcomeButton, setShowWelcomeButton] = useState(true)
-
-  const handleShowMessage = () => {
-    setShowMessage(true)
-    setTimeout(() => {
-      setShowMessage(false)
-    }, 3000)
-  }
 
   return (
     <section className={styles.welcome}>

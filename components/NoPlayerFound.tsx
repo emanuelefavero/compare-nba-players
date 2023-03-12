@@ -1,21 +1,17 @@
 import styles from '@/styles/NoPlayerFound.module.scss'
-import { useState } from 'react'
 import SearchMessage from '@/components/SearchMessage'
 
 interface Props {
+  showMessage: boolean
+  handleShowMessage: () => void
   handleFocusOnSearchInput: () => void
 }
 
-export default function NoPlayerFound({ handleFocusOnSearchInput }: Props) {
-  const [showMessage, setShowMessage] = useState(false)
-
-  const handleShowMessage = () => {
-    setShowMessage(true)
-    setTimeout(() => {
-      setShowMessage(false)
-    }, 3000)
-  }
-
+export default function NoPlayerFound({
+  showMessage,
+  handleShowMessage,
+  handleFocusOnSearchInput,
+}: Props) {
   return (
     <div className={styles.noPlayerFound}>
       {/* Message */}

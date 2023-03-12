@@ -17,6 +17,7 @@ import { IPlayer, IPlayerStats } from '@/types'
 export default function Home() {
   const [loadingPlayers, setLoadingPlayers] = useState(false)
   const [loadingStats, setLoadingStats] = useState(false)
+  const [showMessage, setShowMessage] = useState(false)
   const searchInputRef = useRef<HTMLInputElement>(null)
   const [playerToSearch, setPlayerToSearch] = useState('')
   const [foundPlayers, setFoundPlayers] = useState<IPlayer[]>([])
@@ -30,6 +31,13 @@ export default function Home() {
   const [showCompareButton, setShowCompareButton] = useState(false)
   const [showWelcomeSection, setShowWelcomeSection] = useState(true)
   const [showStats, setShowStats] = useState(false)
+
+  const handleShowMessage = () => {
+    setShowMessage(true)
+    setTimeout(() => {
+      setShowMessage(false)
+    }, 3000)
+  }
 
   const handleFocusOnSearchInput = () => {
     if (searchInputRef.current) {
@@ -84,6 +92,8 @@ export default function Home() {
           {/* Welcome Section */}
           {showWelcomeSection && (
             <WelcomeSection
+              showMessage={showMessage}
+              handleShowMessage={handleShowMessage}
               handleFocusOnSearchInput={handleFocusOnSearchInput}
               handleAddPlayerNameToSearchInput={
                 handleAddPlayerNameToSearchInput
@@ -113,6 +123,8 @@ export default function Home() {
             showFoundPlayers &&
             !loadingPlayers && (
               <NoPlayerFound
+                showMessage={showMessage}
+                handleShowMessage={handleShowMessage}
                 handleFocusOnSearchInput={handleFocusOnSearchInput}
               />
             )
@@ -153,6 +165,8 @@ export default function Home() {
               />
             ) : (
               <NoStats
+                showMessage={showMessage}
+                handleShowMessage={handleShowMessage}
                 player1={player1}
                 player2={player2}
                 player1Stats={player1Stats}

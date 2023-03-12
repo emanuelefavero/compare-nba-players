@@ -1,8 +1,11 @@
 import styles from '@/styles/NoStats.module.scss'
+import SearchMessage from '@/components/SearchMessage'
 
 import { IPlayer, IPlayerStats } from '@/types'
 
 interface Props {
+  showMessage: boolean
+  handleShowMessage: () => void
   player1: IPlayer | null
   player2: IPlayer | null
   player1Stats: IPlayerStats | null
@@ -11,6 +14,8 @@ interface Props {
 }
 
 export default function NoStats({
+  showMessage,
+  handleShowMessage,
   player1,
   player2,
   player1Stats,
@@ -19,6 +24,9 @@ export default function NoStats({
 }: Props) {
   return (
     <div className={styles.noStats}>
+      {/* Message */}
+      {showMessage && <SearchMessage />}
+
       <div className={styles.FourZeroFour}>404</div>
       <h2>No Stats Found For</h2>
 
@@ -61,7 +69,10 @@ export default function NoStats({
 
       <p>Please only compare {new Date().getFullYear()} active NBA players</p>
       <div
-        onClick={handleFocusOnSearchInput}
+        onClick={() => {
+          handleFocusOnSearchInput()
+          handleShowMessage()
+        }}
         role='button'
         className={styles.searchAgainButton}
       >
