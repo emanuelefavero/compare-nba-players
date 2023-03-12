@@ -1,4 +1,5 @@
 import styles from '@/styles/About.module.scss'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import AboutHeader from '@/components/AboutHeader'
 import Footer from '@/components/Footer'
@@ -8,6 +9,10 @@ export default function About() {
 
   return (
     <>
+      <Head>
+        <title>About This Website</title>
+      </Head>
+
       <AboutHeader />
 
       <main className={styles.about}>
