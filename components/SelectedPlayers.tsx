@@ -1,4 +1,7 @@
 import styles from '@/styles/SelectedPlayers.module.scss'
+import { useEffect } from 'react'
+
+import { toast } from 'react-toastify'
 
 import { IPlayer } from '@/types'
 
@@ -8,6 +11,22 @@ interface Props {
 }
 
 export default function SelectedPlayers({ player1, player2 }: Props) {
+  useEffect(() => {
+    if (player1 && !player2) {
+      toast.info('Add a second player to compare against!', {
+        toastId: 'selectSecondPlayer',
+        position: 'top-left',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      })
+    }
+  }, [player1, player2])
+
   return (
     <>
       <section className={styles.selectedPlayers}>

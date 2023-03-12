@@ -71,8 +71,8 @@ export default function Header({
   }
 
   const isValidPlayer = (player: string) => {
-    //  check if the player name is valid (add also single quotes, spaces, hyphens, and apostrophes)
-    const regex = /^[a-zA-Z0-9-' ]+$/
+    //  check if the player name is valid - this regex allows all letters (lowercase and uppercase), all numbers, periods, hyphens, apostrophes, single quotes and spaces in no particolar order
+    const regex = /^[a-zA-Z0-9.'\-_\s]*$/
     return regex.test(player)
   }
 

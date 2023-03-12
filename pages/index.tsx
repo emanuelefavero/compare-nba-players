@@ -81,6 +81,7 @@ export default function Home() {
 
       <div className={styles.mainContainer}>
         <main>
+          {/* Welcome Section */}
           {showWelcomeSection && (
             <WelcomeSection
               handleFocusOnSearchInput={handleFocusOnSearchInput}
@@ -90,6 +91,7 @@ export default function Home() {
             />
           )}
 
+          {/* Found Players */}
           {showFoundPlayers && loadingPlayers ? (
             <Loader />
           ) : // TODO: Change the following code to a ternary operator to handle no user found (if foundPlayers has zero items)
@@ -134,11 +136,11 @@ export default function Home() {
             />
           )}
 
+          {/* Stats */}
           {player1Stats && player2Stats && (
             <ComparedPlayersInfo player1={player1} player2={player2} />
           )}
 
-          {/* Stats */}
           {loadingStats ? (
             <Loader />
           ) : showStats ? (
