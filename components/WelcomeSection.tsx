@@ -2,6 +2,7 @@ import styles from '@/styles/WelcomeSection.module.scss'
 import { useState } from 'react'
 import Image from 'next/image'
 import Marquee from '@/components/Marquee'
+import SearchMessage from '@/components/SearchMessage'
 
 interface Props {
   handleFocusOnSearchInput: () => void
@@ -29,11 +30,7 @@ export default function WelcomeSection({
       />
 
       {/* Message */}
-      {showMessage && (
-        <div className={styles.message}>
-          <span className={styles.arrow}>⬆</span> Search for a player
-        </div>
-      )}
+      {showMessage && <SearchMessage />}
 
       {/* Welcome Gradient Button */}
       {showWelcomeButton && (

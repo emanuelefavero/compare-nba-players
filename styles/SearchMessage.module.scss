@@ -1,0 +1,46 @@
+.message {
+  position: absolute;
+  top: 0;
+  right: 10.2rem;
+  color: var(--color-success);
+  font-weight: 600;
+  background-color: #0b0e1b;
+  box-shadow: 0px 0px 7px #000000;
+  border-radius: 0.6rem;
+  padding: 0.2rem 0.4rem;
+  font-size: 1.15rem;
+  transition: 0.5s;
+
+  animation: 1s fadeIn ease-in-out;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .arrow {
+    margin-right: 0.1rem;
+    position: relative;
+    animation: 1s arrowBounce ease-in-out infinite;
+
+    @keyframes arrowBounce {
+      0% {
+        top: 0;
+      }
+      50% {
+        top: 0.2rem;
+      }
+      100% {
+        top: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 456px) {
+    left: 1rem;
+  }
+}
