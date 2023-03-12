@@ -52,6 +52,22 @@ export default function App({ Component, pageProps }: AppProps) {
           content='https://compare-nba-players.vercel.app/favicon.ico'
         />
 
+        {/* Linkedin */}
+        <meta property='linkedin:title' content='Compare NBA Players' />
+        <meta
+          property='linkedin:description'
+          content='Compare NBA players stats to win arguments with your friends.'
+        />
+        <meta
+          property='linkedin:image'
+          content='https://compare-nba-players.vercel.app/favicon.ico'
+        />
+        <meta property='linkedin:siteName' content='Compare NBA Players' />
+        <meta
+          property='linkedin:url'
+          content='https://compare-nba-players.vercel.app'
+        />
+
         {/* Favicon */}
         <link rel='icon' href='/favicon.ico' />
       </Head>
