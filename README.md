@@ -8,7 +8,7 @@ This is a Next.js app that allows you to compare NBA players. It uses the [balld
 
 #### Screenshot
 
-![screenshot](./screenshot.jpg 'screenshot')
+![screenshot](./screenshot.webp 'screenshot')
 
 ## Getting Started
 
