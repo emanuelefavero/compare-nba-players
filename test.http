@@ -1,0 +1,3 @@
+GET http://api.balldontlie.io/v1/players?search=curry
+Content-Type: application/json
+Authorization: cdc80ccc-39ab-42cd-8969-f3936cc2b02d

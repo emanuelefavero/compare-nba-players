@@ -36,11 +36,28 @@ export default function Header({
   const handlePlayerSearch = async () => {
     if (isValidPlayer(playerToSearch)) {
       setLoadingPlayers(true) // Show loading spinner
-      const response = await fetch(
-        `https://www.balldontlie.io/api/v1/players?search=${playerToSearch}`
-      )
-      const data = await response.json()
-      setFoundPlayers(data.data)
+
+      // Fetch player data
+      const response = await fetch('/api/playerSearch', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          playerToSearch,
+        }),
+      })
+
+      if (!response.ok) {
+        toast.error('Failed to fetch player data')
+        setLoadingPlayers(false)
+        return
+      }
+
+      // Get player data
+      const players = await response.json()
+
+      setFoundPlayers(players)
       setPlayerToSearch('') // Clear search input
 
       setShowWelcomeSection(false) // Hide welcome section
@@ -50,6 +67,7 @@ export default function Header({
 
       setLoadingPlayers(false) // Hide loading spinner
     } else {
+      // Toastify notification
       toast.warn('Invalid player name!', {
         toastId: 'invalidPlayerName',
         position: 'top-left',
