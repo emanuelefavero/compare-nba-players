@@ -12,7 +12,6 @@ export default async function handler(req, res) {
       // TODO make sure that when the user clicks on a player name in the home, the correct formatted name is sent to the api (you could use an hash table to map the names. So if the user writes or clicks on "Lebron James" you send "lebron" to the api so you get the correct data)
 
       // TODO make sure the correct data is displayed in the found players page (after a player is searched)
-      // console.log('apiUrl:', apiUrl)
 
       const response = await fetch(apiUrl, {
         headers: {

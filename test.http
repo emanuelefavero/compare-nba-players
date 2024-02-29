@@ -1,3 +1,9 @@
-GET http://api.balldontlie.io/v1/players?search=curry
+### GET /players
+GET https://api.balldontlie.io/v1/players?search=curry
 Content-Type: application/json
-Authorization: cdc80ccc-39ab-42cd-8969-f3936cc2b02d
+Authorization: YOUR_API_KEY
+
+### GET /season_averages
+GET https://api.balldontlie.io/v1/season_averages?season=2023&player_ids[]=115&player_ids[]=114
+Content-Type: application/json
+Authorization: YOUR_API_KEY
