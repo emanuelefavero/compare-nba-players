@@ -80,3 +80,15 @@ export const nbaPlayers = [
   'Anthony Edwards',
   'Aaron Gordon',
 ]
+
+// Write a function that takes in an array of NBA players and for each player it maps a shorter name
+// TIP: This is needed so the players can be searched in the API
+export const searchableNames = new Map()
+
+nbaPlayers.forEach((player: string) => {
+  // return just the first word in lowercase
+  const searchableName = player.split(' ')[0].toLowerCase()
+
+  // set the full name as the key and the searchable name as the value
+  searchableNames.set(player.toLowerCase(), searchableName)
+})

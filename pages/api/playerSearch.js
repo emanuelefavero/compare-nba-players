@@ -1,3 +1,5 @@
+import { searchableNames } from '@/data/nbaPlayers'
+
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { playerToSearch } = req.body
@@ -6,10 +8,15 @@ export default async function handler(req, res) {
       return res.status(400).json({ message: 'Player name is required' })
     }
 
-    try {
-      const apiUrl = `https://api.balldontlie.io/v1/players?search=${playerToSearch}`
+    // TODO right now we need to convert the player full name to the format that the API expects (it does not accept full names anymore). Ask the balldontlie API team how to search for players by full name
+    // If playerToSearch is in the searchableNames map, use the value from the map
+    const playerToSearchFormatted =
+      searchableNames.get(playerToSearch.toLowerCase()) || playerToSearch
 
-      // TODO make sure that when the user clicks on a player name in the home, the correct formatted name is sent to the api (you could use an hash table to map the names. So if the user writes or clicks on "Lebron James" you send "lebron" to the api so you get the correct data)
+    console.log('playerToSearchFormatted:', playerToSearchFormatted)
+
+    try {
+      const apiUrl = `https://api.balldontlie.io/v1/players?search=${playerToSearchFormatted}`
 
       const response = await fetch(apiUrl, {
         headers: {
