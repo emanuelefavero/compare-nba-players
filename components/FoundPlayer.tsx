@@ -45,19 +45,11 @@ export default function FoundPlayer({
       <section className={styles.right}>
         <div className={styles.playerHeight}>
           HT
-          {player.height_feet && player.height_inches ? (
-            <p>{`${player.height_feet}' ${player.height_inches}''`}</p>
-          ) : (
-            <p>❔</p>
-          )}
+          <p>{player.height ? `${player.height}` : '❔'}</p>
         </div>
         <div className={styles.playerWeight}>
           WT
-          {player.weight_pounds ? (
-            <p>{`${player.weight_pounds} lbs`}</p>
-          ) : (
-            <p>❔</p>
-          )}
+          <p>{player.weight ? `${player.weight} lbs` : '❔'}</p>
         </div>
 
         {/* When the user clicks on add + button the button shows which slot the player is set to (between player1 and player2) */}
