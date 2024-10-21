@@ -5,8 +5,8 @@ export default async function handler(req, res) {
   }
 
   const { player1Id, player2Id } = req.body
-
   const currentYear = new Date().getFullYear() // get current year
+  // TODO: Make the user choose the season to compare by sending the season as a parameter in the request body
 
   // Fetch data from the API
   const response = await fetch(
