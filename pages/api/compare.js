@@ -7,22 +7,35 @@ export default async function handler(req, res) {
   }
 
   const { player1Id, player2Id } = req.body
+  const apiKey = process.env.API_KEY
 
   // TODO: Let the user choose the season (remember to still adjust the season year, @see getCurrentSeason)
   const seasonYear = getCurrentSeason()
 
-  // Fetch data from the API
-  const response = await fetch(
-    `https://api.balldontlie.io/v1/season_averages?season=${seasonYear}&player_ids[]=${player1Id}&player_ids[]=${player2Id}`,
+  // * Fetch player 1 season averages
+  const response1 = await fetch(
+    `https://api.balldontlie.io/v1/season_averages?season=${seasonYear}&player_id=${player1Id}`,
     {
       headers: {
-        Authorization: process.env.API_KEY,
+        Authorization: apiKey,
       },
     }
   )
-  const data = await response.json()
+  const data1 = await response1.json()
 
+  // * Fetch player 2 season averages
+  const response2 = await fetch(
+    `https://api.balldontlie.io/v1/season_averages?season=${seasonYear}&player_id=${player2Id}`,
+    {
+      headers: {
+        Authorization: apiKey,
+      },
+    }
+  )
+  const data2 = await response2.json()
+
+  // Return data
   res
     .status(200)
-    .json({ player1Stats: data.data[0], player2Stats: data.data[1] })
+    .json({ player1Stats: data1.data[0], player2Stats: data2.data[0] })
 }
