@@ -1,13 +1,19 @@
+import type { NextApiRequest, NextApiResponse } from 'next'
 import getCurrentSeason from '@/utils/getCurrentSeason'
 
-export default async function handler(req, res) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   // Only allow POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Only POST requests are allowed' })
   }
 
   const { player1Id, player2Id } = req.body
+
   const apiKey = process.env.API_KEY
+  if (!apiKey) return res.status(500).json({ message: 'API key is missing' })
 
   // TODO: Let the user choose the season (remember to still adjust the season year, @see getCurrentSeason)
   const seasonYear = getCurrentSeason()
