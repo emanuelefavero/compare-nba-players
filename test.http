@@ -4,6 +4,12 @@ Content-Type: application/json
 Authorization: YOUR_API_KEY
 
 ### GET /season_averages
+GET https://api.balldontlie.io/v1/season_averages?season=2023&player_id=115
+Content-Type: application/json
+Authorization: YOUR_API_KEY
+
+# ------------------- PREVIOUS API (OUTDATED) -------------------
+### GET /season_averages
 GET https://api.balldontlie.io/v1/season_averages?season=2024&player_ids[]=115&player_ids[]=114
 Content-Type: application/json
 Authorization: YOUR_API_KEY
