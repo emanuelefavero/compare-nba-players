@@ -1,6 +1,10 @@
+import type { NextApiRequest, NextApiResponse } from 'next'
 import { searchableNames } from '@/data/nbaPlayers'
 
-export default async function handler(req, res) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method === 'POST') {
     const { playerToSearch } = req.body
 
@@ -17,10 +21,13 @@ export default async function handler(req, res) {
 
     try {
       const apiUrl = `https://api.balldontlie.io/v1/players?search=${playerToSearchFormatted}`
+      const apiKey = process.env.API_KEY
+      if (!apiKey)
+        return res.status(500).json({ message: 'API key is missing' })
 
       const response = await fetch(apiUrl, {
         headers: {
-          Authorization: process.env.API_KEY,
+          Authorization: apiKey,
         },
       })
       const data = await response.json()
