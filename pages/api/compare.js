@@ -6,9 +6,11 @@ export default async function handler(req, res) {
 
   const { player1Id, player2Id } = req.body
 
+  const currentYear = new Date().getFullYear() // get current year
+
   // Fetch data from the API
   const response = await fetch(
-    `https://api.balldontlie.io/v1/season_averages?season=2023&player_ids[]=${player1Id}&player_ids[]=${player2Id}`,
+    `https://api.balldontlie.io/v1/season_averages?season=${currentYear}&player_ids[]=${player1Id}&player_ids[]=${player2Id}`,
     {
       headers: {
         Authorization: process.env.API_KEY,

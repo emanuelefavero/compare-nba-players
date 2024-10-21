@@ -1,9 +1,9 @@
 ### GET /players
-GET https://api.balldontlie.io/v1/players?search=durant
+GET https://api.balldontlie.io/v1/players?search=curry
 Content-Type: application/json
 Authorization: YOUR_API_KEY
 
 ### GET /season_averages
-GET https://api.balldontlie.io/v1/season_averages?season=2023&player_ids[]=115&player_ids[]=114
+GET https://api.balldontlie.io/v1/season_averages?season=2024&player_ids[]=115&player_ids[]=114
 Content-Type: application/json
 Authorization: YOUR_API_KEY
