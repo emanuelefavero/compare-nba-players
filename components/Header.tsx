@@ -61,7 +61,6 @@ export default function Header({
         setShowFoundPlayers(true) // Show found players
         setShowSelectedPlayers(true) // Show selected players
         setShowCompareButton(true) // Show compare button
-
       } catch {
         toast.error('Failed to fetch player data')
       } finally {
