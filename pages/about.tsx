@@ -22,7 +22,7 @@ export default function About() {
           As a software engineer and avid NBA fan, I found myself constantly
           engaged in debates with my friends about which player had better stats
           in a head-to-head matchup. That&apos;s why I decided to build this
-          website, which allows users to easily compare the stats of active NBA
+          website, which allows users to easily compare the season averages of NBA
           players in a 1v1 setting. Whether you&apos;re settling an argument
           with a friend or just curious about how two players stack up against
           each other, this platform makes it easy to find the information you
@@ -30,7 +30,7 @@ export default function About() {
         </p>
         <p>
           This website is designed with the user in mind. I&apos;ve created an
-          intuitive interface that allows you to search for any two players and
+          intuitive interface that allows you to search for two included players and
           see their head-to-head statistics across a range of categories,
           including points, rebounds, assists, and more.
         </p>
@@ -43,8 +43,10 @@ export default function About() {
 
         <aside>
           <b>Please note:</b> as of right now, you can only compare{' '}
-          {new Date().getFullYear()} active NBA players
+          2025–26 players available in this curated snapshot
         </aside>
+        <p>Data comes from balldontlie’s legacy season averages endpoint and includes play-in games. Player profiles and team affiliations reflect the capture date rather than historical season rosters.</p>
+        <p>Source: <a href='https://www.balldontlie.io/'>balldontlie</a>. Retained data is used under <a href='https://www.balldontlie.io/terms.html'>the published terms, sections 6 and 17</a>.</p>
       </main>
 
       <Footer />

@@ -1,5 +1,5 @@
 import styles from '@/styles/Marquee.module.scss'
-import { nbaPlayers } from '@/data/nbaPlayers'
+import { homepagePlayers as nbaPlayers } from '@/data/nbaSnapshot'
 
 interface Props {
   handleAddPlayerNameToSearchInput: (playerName: string) => void

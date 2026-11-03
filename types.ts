@@ -1,6 +1,6 @@
 export interface IPlayer {
   first_name: string
-  height?: number
+  height?: string | null
   id: number
   last_name: string
   position?: string
@@ -13,7 +13,7 @@ export interface IPlayer {
     id: number
     name: string
   }
-  weight?: number
+  weight?: string | null
 }
 
 export interface IPlayerStats {

@@ -39,7 +39,7 @@ export default function WelcomeSection({
           role='button'
           className={styles.buttonRotatingGradient}
         >
-          Compare {new Date().getFullYear()}
+          Compare 2025–26
           <Image
             src={'/nba-logos/nba.png'}
             alt='nba logo'

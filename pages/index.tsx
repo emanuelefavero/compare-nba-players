@@ -104,11 +104,10 @@ export default function Home() {
           {/* Found Players */}
           {showFoundPlayers && loadingPlayers ? (
             <Loader />
-          ) : foundPlayers.length > 0 ? (
+          ) : showFoundPlayers && foundPlayers.length > 0 ? (
             foundPlayers.map((player: IPlayer) => (
               <div key={player.id}>
-                {/* // ? If player.position is found, it means the player is active. Show only active players */}
-                {player.position && (
+                {(
                   <FoundPlayer
                     player={player}
                     player1={player1}
@@ -148,7 +147,7 @@ export default function Home() {
           )}
 
           {/* Stats */}
-          {player1Stats && player2Stats && (
+          {showStats && player1Stats && player2Stats && (
             <ComparedPlayersInfo player1={player1} player2={player2} />
           )}
 

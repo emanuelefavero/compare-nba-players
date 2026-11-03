@@ -67,7 +67,7 @@ export default function NoStats({
         )
       }
 
-      <p>Please only compare {new Date().getFullYear()} active NBA players</p>
+      <p>Please only compare 2025–26 players available in this snapshot</p>
       <div
         onClick={() => {
           handleFocusOnSearchInput()

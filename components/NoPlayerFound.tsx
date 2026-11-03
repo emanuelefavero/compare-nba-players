@@ -20,7 +20,7 @@ export default function NoPlayerFound({
       <div className={styles.FourZeroFour}>404</div>
       <h2>No player found</h2>
       <p>
-        Please only search for {new Date().getFullYear()} active NBA players
+        Please only search for 2025–26 players available in this snapshot
       </p>
       <div
         onClick={() => {

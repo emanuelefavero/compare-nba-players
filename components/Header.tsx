@@ -31,41 +31,42 @@ export default function Header({
   setShowCompareButton,
   setShowWelcomeSection,
 }: Props) {
-  // const [playerToSearch, setPlayerToSearch] = useState('')
-
   const handlePlayerSearch = async () => {
     if (isValidPlayer(playerToSearch)) {
       setLoadingPlayers(true) // Show loading spinner
 
-      // Fetch player data
-      const response = await fetch('/api/playerSearch', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          playerToSearch,
-        }),
-      })
+      try {
+        // Fetch player data
+        const response = await fetch('/api/playerSearch', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            playerToSearch,
+          }),
+        })
 
-      if (!response.ok) {
+        if (!response.ok) {
+          throw new Error('Player search failed')
+        }
+
+        // Get player data
+        const players = await response.json()
+
+        setFoundPlayers(players)
+        setPlayerToSearch('') // Clear search input
+
+        setShowWelcomeSection(false) // Hide welcome section
+        setShowFoundPlayers(true) // Show found players
+        setShowSelectedPlayers(true) // Show selected players
+        setShowCompareButton(true) // Show compare button
+
+      } catch {
         toast.error('Failed to fetch player data')
+      } finally {
         setLoadingPlayers(false)
-        return
       }
-
-      // Get player data
-      const players = await response.json()
-
-      setFoundPlayers(players)
-      setPlayerToSearch('') // Clear search input
-
-      setShowWelcomeSection(false) // Hide welcome section
-      setShowFoundPlayers(true) // Show found players
-      setShowSelectedPlayers(true) // Show selected players
-      setShowCompareButton(true) // Show compare button
-
-      setLoadingPlayers(false) // Hide loading spinner
     } else {
       // Toastify notification
       toast.warn('Invalid player name!', {
@@ -82,16 +83,10 @@ export default function Header({
     }
   }
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      handlePlayerSearch()
-    }
-  }
-
   const isValidPlayer = (player: string) => {
     //  check if the player name is valid - this regex allows all letters (lowercase and uppercase), all numbers, periods, hyphens, apostrophes, single quotes and spaces in no particolar order
-    const regex = /^[a-zA-Z0-9.'\-_\s]*$/
-    return regex.test(player)
+    const regex = /^[\p{L}\p{M}0-9.’'\-\s]+$/u
+    return Boolean(player.trim()) && regex.test(player)
   }
 
   return (
@@ -115,7 +110,6 @@ export default function Header({
             placeholder='Search player...'
             value={playerToSearch}
             onChange={(e) => setPlayerToSearch(e.target.value)}
-            onKeyDown={handleKeyDown}
             required
           />
 

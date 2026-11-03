@@ -1,0 +1,502 @@
+[
+  {
+    "rank": 1,
+    "displayName": "LeBron James",
+    "playerId": 237
+  },
+  {
+    "rank": 2,
+    "displayName": "Stephen Curry",
+    "playerId": 115
+  },
+  {
+    "rank": 3,
+    "displayName": "Luka Doncic",
+    "playerId": 132
+  },
+  {
+    "rank": 4,
+    "displayName": "Nikola Jokic",
+    "playerId": 246
+  },
+  {
+    "rank": 5,
+    "displayName": "Shai Gilgeous-Alexander",
+    "playerId": 175
+  },
+  {
+    "rank": 6,
+    "displayName": "Victor Wembanyama",
+    "playerId": 56677822
+  },
+  {
+    "rank": 7,
+    "displayName": "Giannis Antetokounmpo",
+    "playerId": 15
+  },
+  {
+    "rank": 8,
+    "displayName": "Kevin Durant",
+    "playerId": 140
+  },
+  {
+    "rank": 9,
+    "displayName": "Anthony Edwards",
+    "playerId": 3547238
+  },
+  {
+    "rank": 10,
+    "displayName": "Jayson Tatum",
+    "playerId": 434
+  },
+  {
+    "rank": 11,
+    "displayName": "Kawhi Leonard",
+    "playerId": 274
+  },
+  {
+    "rank": 12,
+    "displayName": "Joel Embiid",
+    "playerId": 145
+  },
+  {
+    "rank": 13,
+    "displayName": "Donovan Mitchell",
+    "playerId": 322
+  },
+  {
+    "rank": 14,
+    "displayName": "Jalen Brunson",
+    "playerId": 73
+  },
+  {
+    "rank": 15,
+    "displayName": "Devin Booker",
+    "playerId": 57
+  },
+  {
+    "rank": 16,
+    "displayName": "Cade Cunningham",
+    "playerId": 17896075
+  },
+  {
+    "rank": 17,
+    "displayName": "Jaylen Brown",
+    "playerId": 70
+  },
+  {
+    "rank": 18,
+    "displayName": "Anthony Davis",
+    "playerId": 117
+  },
+  {
+    "rank": 19,
+    "displayName": "Ja Morant",
+    "playerId": 666786
+  },
+  {
+    "rank": 20,
+    "displayName": "James Harden",
+    "playerId": 192
+  },
+  {
+    "rank": 21,
+    "displayName": "Jimmy Butler",
+    "playerId": 79
+  },
+  {
+    "rank": 22,
+    "displayName": "Tyrese Maxey",
+    "playerId": 3547254
+  },
+  {
+    "rank": 23,
+    "displayName": "Paolo Banchero",
+    "playerId": 38017683
+  },
+  {
+    "rank": 24,
+    "displayName": "Karl-Anthony Towns",
+    "playerId": 447
+  },
+  {
+    "rank": 25,
+    "displayName": "Damian Lillard",
+    "playerId": 278
+  },
+  {
+    "rank": 26,
+    "displayName": "Kyrie Irving",
+    "playerId": 228
+  },
+  {
+    "rank": 27,
+    "displayName": "LaMelo Ball",
+    "playerId": 3547239
+  },
+  {
+    "rank": 28,
+    "displayName": "Cooper Flagg",
+    "playerId": 1057262088
+  },
+  {
+    "rank": 29,
+    "displayName": "Jamal Murray",
+    "playerId": 335
+  },
+  {
+    "rank": 30,
+    "displayName": "Trae Young",
+    "playerId": 490
+  },
+  {
+    "rank": 31,
+    "displayName": "Tyrese Haliburton",
+    "playerId": 3547245
+  },
+  {
+    "rank": 32,
+    "displayName": "Pascal Siakam",
+    "playerId": 416
+  },
+  {
+    "rank": 33,
+    "displayName": "Bam Adebayo",
+    "playerId": 4
+  },
+  {
+    "rank": 34,
+    "displayName": "Chet Holmgren",
+    "playerId": 38017685
+  },
+  {
+    "rank": 35,
+    "displayName": "Jalen Williams",
+    "playerId": 38017703
+  },
+  {
+    "rank": 36,
+    "displayName": "Evan Mobley",
+    "playerId": 17896076
+  },
+  {
+    "rank": 37,
+    "displayName": "Alperen Sengun",
+    "playerId": 17896062
+  },
+  {
+    "rank": 38,
+    "displayName": "Scottie Barnes",
+    "playerId": 17896055
+  },
+  {
+    "rank": 39,
+    "displayName": "De'Aaron Fox",
+    "playerId": 161
+  },
+  {
+    "rank": 40,
+    "displayName": "Domantas Sabonis",
+    "playerId": 406
+  },
+  {
+    "rank": 41,
+    "displayName": "Jalen Johnson",
+    "playerId": 17896040
+  },
+  {
+    "rank": 42,
+    "displayName": "Jalen Duren",
+    "playerId": 38017694
+  },
+  {
+    "rank": 43,
+    "displayName": "Julius Randle",
+    "playerId": 387
+  },
+  {
+    "rank": 44,
+    "displayName": "Zion Williamson",
+    "playerId": 666969
+  },
+  {
+    "rank": 45,
+    "displayName": "Brandon Ingram",
+    "playerId": 227
+  },
+  {
+    "rank": 46,
+    "displayName": "Desmond Bane",
+    "playerId": 3547287
+  },
+  {
+    "rank": 47,
+    "displayName": "Deni Avdija",
+    "playerId": 3547242
+  },
+  {
+    "rank": 48,
+    "displayName": "Franz Wagner",
+    "playerId": 17896026
+  },
+  {
+    "rank": 49,
+    "displayName": "Jaren Jackson Jr.",
+    "playerId": 231
+  },
+  {
+    "rank": 50,
+    "displayName": "Rudy Gobert",
+    "playerId": 176
+  },
+  {
+    "rank": 51,
+    "displayName": "Kristaps Porzingis",
+    "playerId": 378
+  },
+  {
+    "rank": 52,
+    "displayName": "Darius Garland",
+    "playerId": 666581
+  },
+  {
+    "rank": 53,
+    "displayName": "Mikal Bridges",
+    "playerId": 61
+  },
+  {
+    "rank": 54,
+    "displayName": "OG Anunoby",
+    "playerId": 18
+  },
+  {
+    "rank": 55,
+    "displayName": "Josh Hart",
+    "playerId": 202
+  },
+  {
+    "rank": 56,
+    "displayName": "Amen Thompson",
+    "playerId": 56677825
+  },
+  {
+    "rank": 57,
+    "displayName": "Ausar Thompson",
+    "playerId": 56677826
+  },
+  {
+    "rank": 58,
+    "displayName": "Austin Reaves",
+    "playerId": 17553995
+  },
+  {
+    "rank": 59,
+    "displayName": "Michael Porter Jr.",
+    "playerId": 375
+  },
+  {
+    "rank": 60,
+    "displayName": "Aaron Gordon",
+    "playerId": 177
+  },
+  {
+    "rank": 61,
+    "displayName": "Derrick White",
+    "playerId": 473
+  },
+  {
+    "rank": 62,
+    "displayName": "Jrue Holiday",
+    "playerId": 214
+  },
+  {
+    "rank": 63,
+    "displayName": "Norman Powell",
+    "playerId": 380
+  },
+  {
+    "rank": 64,
+    "displayName": "Tyler Herro",
+    "playerId": 666633
+  },
+  {
+    "rank": 65,
+    "displayName": "Andrew Wiggins",
+    "playerId": 475
+  },
+  {
+    "rank": 66,
+    "displayName": "Draymond Green",
+    "playerId": 185
+  },
+  {
+    "rank": 67,
+    "displayName": "Jonathan Kuminga",
+    "playerId": 17553979
+  },
+  {
+    "rank": 68,
+    "displayName": "Brandin Podziemski",
+    "playerId": 56677858
+  },
+  {
+    "rank": 69,
+    "displayName": "Deandre Ayton",
+    "playerId": 22
+  },
+  {
+    "rank": 70,
+    "displayName": "Ivica Zubac",
+    "playerId": 493
+  },
+  {
+    "rank": 71,
+    "displayName": "Brook Lopez",
+    "playerId": 283
+  },
+  {
+    "rank": 72,
+    "displayName": "Myles Turner",
+    "playerId": 452
+  },
+  {
+    "rank": 73,
+    "displayName": "Naz Reid",
+    "playerId": 667378
+  },
+  {
+    "rank": 74,
+    "displayName": "Donte DiVincenzo",
+    "playerId": 131
+  },
+  {
+    "rank": 75,
+    "displayName": "Jaden McDaniels",
+    "playerId": 3547259
+  },
+  {
+    "rank": 76,
+    "displayName": "Fred VanVleet",
+    "playerId": 458
+  },
+  {
+    "rank": 77,
+    "displayName": "Dillon Brooks",
+    "playerId": 66
+  },
+  {
+    "rank": 78,
+    "displayName": "Jabari Smith Jr.",
+    "playerId": 38017684
+  },
+  {
+    "rank": 79,
+    "displayName": "Trey Murphy III",
+    "playerId": 18677986
+  },
+  {
+    "rank": 80,
+    "displayName": "Herbert Jones",
+    "playerId": 17896024
+  },
+  {
+    "rank": 81,
+    "displayName": "CJ McCollum",
+    "playerId": 303
+  },
+  {
+    "rank": 82,
+    "displayName": "Kon Knueppel",
+    "playerId": 1057263194
+  },
+  {
+    "rank": 83,
+    "displayName": "VJ Edgecombe",
+    "playerId": 1057261935
+  },
+  {
+    "rank": 84,
+    "displayName": "Stephon Castle",
+    "playerId": 1028025261
+  },
+  {
+    "rank": 85,
+    "displayName": "Dylan Harper",
+    "playerId": 1057262518
+  },
+  {
+    "rank": 86,
+    "displayName": "Alex Caruso",
+    "playerId": 89
+  },
+  {
+    "rank": 87,
+    "displayName": "Isaiah Hartenstein",
+    "playerId": 201
+  },
+  {
+    "rank": 88,
+    "displayName": "Lu Dort",
+    "playerId": 666541
+  },
+  {
+    "rank": 89,
+    "displayName": "Josh Giddey",
+    "playerId": 17896065
+  },
+  {
+    "rank": 90,
+    "displayName": "Coby White",
+    "playerId": 666956
+  },
+  {
+    "rank": 91,
+    "displayName": "Nikola Vucevic",
+    "playerId": 460
+  },
+  {
+    "rank": 92,
+    "displayName": "Zach LaVine",
+    "playerId": 268
+  },
+  {
+    "rank": 93,
+    "displayName": "DeMar DeRozan",
+    "playerId": 125
+  },
+  {
+    "rank": 94,
+    "displayName": "Malik Monk",
+    "playerId": 324
+  },
+  {
+    "rank": 95,
+    "displayName": "Keegan Murray",
+    "playerId": 38017688
+  },
+  {
+    "rank": 96,
+    "displayName": "RJ Barrett",
+    "playerId": 666423
+  },
+  {
+    "rank": 97,
+    "displayName": "Immanuel Quickley",
+    "playerId": 3547269
+  },
+  {
+    "rank": 98,
+    "displayName": "Jarrett Allen",
+    "playerId": 9
+  },
+  {
+    "rank": 99,
+    "displayName": "Walker Kessler",
+    "playerId": 38017705
+  },
+  {
+    "rank": 100,
+    "displayName": "Lauri Markkanen",
+    "playerId": 297
+  }
+]

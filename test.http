@@ -1,15 +1,21 @@
-### GET /players
+@baseUrl = http://localhost:3000
+
+### Local player search (no credentials)
+POST {{baseUrl}}/api/playerSearch
+Content-Type: application/json
+
+{"playerToSearch":"Stephen Curry"}
+
+### Local comparison (no credentials)
+POST {{baseUrl}}/api/compare
+Content-Type: application/json
+
+{"player1Id":115,"player2Id":237}
+
+### DEPRECATED Optional export reference only
 GET https://api.balldontlie.io/v1/players?search=curry
-Content-Type: application/json
-Authorization: YOUR_API_KEY
+Authorization: {{$dotenv API_KEY}}
 
-### GET /season_averages
-GET https://api.balldontlie.io/v1/season_averages?season=2023&player_id=115
-Content-Type: application/json
-Authorization: YOUR_API_KEY
-
-# ------------------- PREVIOUS API (OUTDATED) -------------------
-### GET /season_averages
-GET https://api.balldontlie.io/v1/season_averages?season=2024&player_ids[]=115&player_ids[]=114
-Content-Type: application/json
-Authorization: YOUR_API_KEY
+### DEPRECATED Optional season averages export reference only
+GET https://api.balldontlie.io/v1/season_averages?season=2025&player_id=115
+Authorization: {{$dotenv API_KEY}}

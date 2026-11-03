@@ -54,9 +54,8 @@ export default function Stats({
       <StatsCard
         statisticName='FG%'
         statisticNameFull='Field Goal Percentage'
-        // ? removes 0 and decimal point ----------------------> 👇
-        player1Statistic={Number(player1Stats.fg_pct.toFixed(2).slice(2))}
-        player2Statistic={Number(player2Stats.fg_pct.toFixed(2).slice(2))}
+        player1Statistic={Number((player1Stats.fg_pct * 100).toFixed(1))}
+        player2Statistic={Number((player2Stats.fg_pct * 100).toFixed(1))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
         player1Team={player1?.team.name}
@@ -66,8 +65,8 @@ export default function Stats({
       <StatsCard
         statisticName='3P%'
         statisticNameFull='3-Point Percentage'
-        player1Statistic={Number(player1Stats.fg3_pct.toFixed(2).slice(2))}
-        player2Statistic={Number(player2Stats.fg3_pct.toFixed(2).slice(2))}
+        player1Statistic={Number((player1Stats.fg3_pct * 100).toFixed(1))}
+        player2Statistic={Number((player2Stats.fg3_pct * 100).toFixed(1))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
         player1Team={player1?.team.name}
@@ -77,8 +76,8 @@ export default function Stats({
       <StatsCard
         statisticName='FT%'
         statisticNameFull='Free Throw Percentage'
-        player1Statistic={Number(player1Stats.ft_pct.toFixed(2).slice(2))}
-        player2Statistic={Number(player2Stats.ft_pct.toFixed(2).slice(2))}
+        player1Statistic={Number((player1Stats.ft_pct * 100).toFixed(1))}
+        player2Statistic={Number((player2Stats.ft_pct * 100).toFixed(1))}
         player1Name={`${player1?.first_name} ${player1?.last_name}`}
         player2Name={`${player2?.first_name} ${player2?.last_name}`}
         player1Team={player1?.team.name}

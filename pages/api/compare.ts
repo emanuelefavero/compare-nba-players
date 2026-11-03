@@ -1,47 +1,15 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import getCurrentSeason from '@/utils/getCurrentSeason'
+import { getPlayerStats } from '@/data/nbaSnapshot'
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  // Only allow POST requests
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
+    res.setHeader('Allow', 'POST')
     return res.status(405).json({ message: 'Only POST requests are allowed' })
   }
-
-  const { player1Id, player2Id } = req.body
-
-  const apiKey = process.env.API_KEY
-  if (!apiKey) return res.status(500).json({ message: 'API key is missing' })
-
-  // TODO: Let the user choose the season (remember to still adjust the season year, @see getCurrentSeason)
-  const seasonYear = getCurrentSeason()
-
-  // * Fetch player 1 season averages
-  const response1 = await fetch(
-    `https://api.balldontlie.io/v1/season_averages?season=${seasonYear}&player_id=${player1Id}`,
-    {
-      headers: {
-        Authorization: apiKey,
-      },
-    }
-  )
-  const data1 = await response1.json()
-
-  // * Fetch player 2 season averages
-  const response2 = await fetch(
-    `https://api.balldontlie.io/v1/season_averages?season=${seasonYear}&player_id=${player2Id}`,
-    {
-      headers: {
-        Authorization: apiKey,
-      },
-    }
-  )
-  const data2 = await response2.json()
-
-  // Return data
-  res
-    .status(200)
-    .json({ player1Stats: data1.data[0], player2Stats: data2.data[0] })
+  const { player1Id, player2Id } = req.body || {}
+  if (![player1Id, player2Id].every((id) => Number.isSafeInteger(id) && id > 0)) return res.status(400).json({ message: 'Two valid player IDs are required' })
+  const player1Stats = getPlayerStats(player1Id)
+  const player2Stats = getPlayerStats(player2Id)
+  if (!player1Stats || !player2Stats) return res.status(404).json({ message: 'Player is absent from this snapshot' })
+  return res.status(200).json({ player1Stats, player2Stats })
 }

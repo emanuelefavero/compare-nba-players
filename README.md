@@ -1,6 +1,6 @@
 # Compare NBA Players
 
-This is a website that allows you to compare NBA players. It uses the [balldontlie API](https://www.balldontlie.io/home.html#players) to get the data as well as [Chart.js](https://www.chartjs.org/) to display the data.
+This is a website that allows you to compare NBA players. It uses a saved 2025–26 [balldontlie](https://www.balldontlie.io/) snapshot (including play-in games) as well as [Chart.js](https://www.chartjs.org/) to display the data.
 
 ## Website
 
@@ -20,15 +20,19 @@ This is a website that allows you to compare NBA players. It uses the [balldontl
 ## Resources
 
 - [balldontlie API](https://www.balldontlie.io/home.html#players)
-- [balldontlie player search](https://www.balldontlie.io/api/v1/players?search=curry)
-- [balldontlie stats](https://www.balldontlie.io/api/v1/season_averages?player_ids[]=115&player_ids[]=237)
 - [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2#docs)
 - [Chart.js](https://www.chartjs.org/docs/latest/)
 - [Nextjs](https://nextjs.org/)
 - [React](https://reactjs.org/)
-- [Tailwindcss](https://tailwindcss.com/)
-- [Tailwind Cheat Sheet](https://nerdcave.com/tailwind-cheat-sheet)
 
 ## License
 
 - [MIT](LICENSE.md)
+
+## Snapshot
+
+Normal development and production require no API key or upstream NBA requests. The curated snapshot contains 96 of the 100 requested players; four have no season averages. Profiles and team affiliations reflect the capture date shown in the app.
+
+To optionally export again, set `API_KEY` in your environment or ignored `.env.local`, then run `npm run snapshot:export`. Exporting requires paid balldontlie endpoint access. Requests are paced and resumable through an ignored `.snapshot-export/` checkpoint; remove that directory to start a fresh capture. The exporter preserves existing JSON on failure.
+
+Data retention follows [balldontlie’s terms, particularly sections 6 and 17](https://www.balldontlie.io/terms.html).
